@@ -1,0 +1,4 @@
+Create Table Doctor(DoctorId int identity(1001,1) constraint pk_Doctor_DoctorId primary key
+,DoctorName varchar(25) not null)
+
+Insert into Doctor(DoctorName) values('Albert'),('Olivia'),('Susan')
