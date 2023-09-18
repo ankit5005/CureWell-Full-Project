@@ -1,7 +1,8 @@
 
+
 --Creation of Specialization Table
 CREATE TABLE Specialization(
-	SpecializationCode Char(3) constraint pk_SpecializationCode PRIMARY KEY,
+	SpecializationCode Char(3) constraint pk_Specialization_SpecializationCode PRIMARY KEY,
 	SpecializationName Varchar(20) NOT NULL
 );
 
