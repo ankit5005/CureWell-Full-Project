@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOTI.CureWell.DAL", "SOTI.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOTI.CureWell.WebAPI", "SOTI.CureWell.WebAPI\SOTI.CureWell.WebAPI.csproj", "{F1BBD280-0CD6-4355-BF82-580E70201AA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainMethod", "MainMethod\MainMethod.csproj", "{7BE1A343-0DE7-4507-9C5C-746894C497EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F1BBD280-0CD6-4355-BF82-580E70201AA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1BBD280-0CD6-4355-BF82-580E70201AA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1BBD280-0CD6-4355-BF82-580E70201AA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BE1A343-0DE7-4507-9C5C-746894C497EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BE1A343-0DE7-4507-9C5C-746894C497EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BE1A343-0DE7-4507-9C5C-746894C497EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BE1A343-0DE7-4507-9C5C-746894C497EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

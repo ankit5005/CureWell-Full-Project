@@ -4,3 +4,10 @@ C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject\CurewellProject\SOTI.Cure
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.DAL\obj\Debug\SOTI.CureWell.DAL.csproj.CoreCompileInputs.cache
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.DAL\obj\Debug\SOTI.CureWell.DAL.dll
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.DAL\obj\Debug\SOTI.CureWell.DAL.pdb
+C:\Users\ankitsharma\OneDrive - SOTI Inc\Desktop\CureWellBackend\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.DAL\obj\Debug\SOTI.CureWell.DAL.csproj.AssemblyReference.cache
+C:\Users\ankitsharma\OneDrive - SOTI Inc\Desktop\CureWellBackend\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.DAL\obj\Debug\SOTI.CureWell.DAL.csproj.CoreCompileInputs.cache
+C:\Users\ankitsharma\OneDrive - SOTI Inc\Desktop\CureWellBackend\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.DAL\obj\Debug\SOTI.CureWell.DAL.dll
+C:\Users\ankitsharma\OneDrive - SOTI Inc\Desktop\CureWellBackend\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.DAL\obj\Debug\SOTI.CureWell.DAL.pdb
+C:\Users\ankitsharma\OneDrive - SOTI Inc\Desktop\CureWellBackend\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.DAL\bin\Debug\SOTI.CureWell.DAL.dll.config
+C:\Users\ankitsharma\OneDrive - SOTI Inc\Desktop\CureWellBackend\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.DAL\bin\Debug\SOTI.CureWell.DAL.dll
+C:\Users\ankitsharma\OneDrive - SOTI Inc\Desktop\CureWellBackend\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.DAL\bin\Debug\SOTI.CureWell.DAL.pdb
