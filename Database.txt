@@ -1,0 +1,90 @@
+Use CureWell
+
+Create Table Doctor(DoctorId int identity(1001,1) constraint pk_Doctor_DoctorId primary key
+,DoctorName varchar(25) not null)
+
+Insert into Doctor(DoctorName) values('Albert'),('Olivia'),('Susan')
+
+
+CREATE TABLE Specialization(
+	SpecializationCode Char(3) constraint pk_Specialization_SpecializationCode PRIMARY KEY,
+	SpecializationName Varchar(20) NOT NULL
+);
+
+--Insertion of Sample Data
+INSERT INTO Specialization (SpecializationCode,SpecializationName)
+		VALUES('GYN','Gynecologist'),
+			  ('CAR','Cardiologist'),
+			  ('ANE','Anesthesiologist');
+
+
+CREATE TABLE DoctorSpecialization(
+	DoctorId INT CONSTRAINT fk_DoctorSpecialization_Doctor_DoctorId foreign Key references Doctor(DoctorId),
+	SpecializationCode Char(3) CONSTRAINT fk_DoctorSpecialization_Specialization_SpecializationCode foreign Key references Specialization(SpecializationCode),
+	SpecializationDate DATE NOT NULL,
+	Constraint ck_DoctorSpecialization_DoctorId_SpecializationCode PRIMARY KEY (DoctorId,SpecializationCode)
+)
+INSERT INTO DoctorSpecialization(DoctorId,
+SpecializationCode,SpecializationDate) Values(1001,'ANE','2010-01-01'),
+(1002,'CAR','2010-01-01'),(1003,'CAR','2010-01-01')
+
+create table Surgery(
+SurgeryId int identity(5000,1) constraint pk_Surgery_SurgeryId primary Key,
+DoctorId int constraint fk_Surgery_Doctor_DoctorId foreign Key references Doctor(DoctorId),
+SurgeryDate Date not null,
+StartTime Decimal(4,2) not null,
+EndTime Decimal(4,2) not null,
+SurgeryCategory char(3) constraint fk_Surgery_Specialization_SurgeryCategory foreign Key references Specialization(SpecializationCode)
+)
+
+Insert into Surgery(DoctorId,SurgeryDate,StartTime,EndTime,SurgeryCategory) values (1001,'2011-01-01',09.00,14.00,'ANE'),
+(1002,'2015-01-01',10.00,16.00,'CAR')
+
+Create proc usp_AddDoctor(@DoctorName varchar(25))
+as
+begin
+  Insert into Doctor(DoctorName) values(@DoctorName)
+  return 1
+end
+
+
+Create proc usp_DeleteDoctor(@DoctorId int)
+as
+if(not exists(Select 'a' from Doctor where DoctorId=@DoctorId))
+   return -1
+else
+ begin
+  Delete from Doctor where DoctorId=@DoctorId
+  return 1
+ end
+
+CREATE PROCEDURE usp_GetAllSpecialization
+AS
+BEGIN
+	SELECT * FROM Specialization;
+END
+
+Create proc usp_UpdateDoctorDetails(@DoctorId int,@DoctorName varchar(25))
+as
+if(not exists(Select 'a' from Doctor where DoctorId=@DoctorId))
+   return -1
+else
+ begin
+  Update Doctor set DoctorName=@DoctorName where DoctorId=@DoctorId
+  return 1
+ end
+
+Create proc usp_UpdateSurgery(@SurgeryId int,@DoctorId int,@SurgeryDate Date,@StartTime Decimal(4,2),
+@EndTime Decimal(4,2),
+@SurgeryCategory Char(3))
+as
+if(not exists(Select 'a' from Surgery where SurgeryId=@SurgeryId))
+   return -1
+else if(not exists(Select 'a' from Doctor where DoctorId=@DoctorId))
+   return -1
+else
+ begin
+  Update Surgery set DoctorId=@DoctorId,SurgeryDate=@SurgeryDate,StartTime=@StartTime,
+  EndTime=@EndTime,SurgeryCategory=@SurgeryCategory where SurgeryId=@SurgeryId
+  return 1
+ end
