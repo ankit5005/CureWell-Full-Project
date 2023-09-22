@@ -132,6 +132,8 @@ C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureW
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\SOTI.CureWell.DAL.dll
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\System.Net.Http.Formatting.dll
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\System.Web.Cors.dll
+C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\System.Web.Http.Cors.dll
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\System.Web.Http.dll
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\System.Web.Http.WebHost.dll
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\Unity.Abstractions.dll
@@ -140,6 +142,7 @@ C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureW
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\SOTI.CureWell.DAL.pdb
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\SOTI.CureWell.DAL.dll.config
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\System.Web.Http.Cors.xml
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\Unity.Abstractions.pdb
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\Unity.Container.pdb
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\Newtonsoft.Json.xml

@@ -1,1 +1,24 @@
-<p>add-doctor works!</p>
+<h1 class="text-center mb-3">Add Doctor</h1>
+<div class="container ">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <form action="" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label class="form-label">Doctor Name</label>
+                    <input type="text" class="form-control" formControlName="doctorName"
+                        [ngClass]="{error:(submitted || f['doctorName'].touched) && f['doctorName'].errors}">
+                </div>
+                <div *ngIf="(submitted || f['doctorName'].touched) && f['doctorName'].errors"
+                    class="text-danger small">
+                    <span *ngIf="f['doctorName'].errors?.['required']">Doctor Name is required</span>
+                </div>
+            
+                <div>
+                    <button class="btn btn-primary" type="submit">Add Doctor</button>
+                    <button class="btn" (click)="doReset()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

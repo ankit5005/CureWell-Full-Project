@@ -1,4 +1,4 @@
 export class Doctor {
-    public DoctorId:number=0;
-    public DoctorName:string="";
+    public doctorId:number=0;
+    public doctorName:string="";
 }
