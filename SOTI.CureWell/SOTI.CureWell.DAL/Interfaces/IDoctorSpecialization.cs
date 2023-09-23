@@ -9,6 +9,6 @@ namespace SOTI.CureWell.DAL.Interfaces
 {
     public interface IDoctorSpecialization
     {
-        List<DoctorSpecialization> GetDoctorsBySpecialization(string specializationCode);
+        List<Doctor> GetDoctorsBySpecialization(string specializationCode);
     }
 }

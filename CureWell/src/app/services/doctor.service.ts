@@ -6,7 +6,7 @@ import { Doctor } from '../models/doctor';
   providedIn: 'root'
 })
 export class DoctorService {
-  private baseUrl = "https://localhost:44352/api/Home"
+  private baseUrl = "https://localhost:44351/api/Home"
   private authHeader!: HttpHeaders;
 
 
@@ -24,7 +24,14 @@ export class DoctorService {
   getDoctors(): Observable<Doctor[]> {
     return this.http.get<Doctor[]>(`${this.baseUrl}/AllDoctors`,{ headers: this.authHeader });
   }
+  updateDoctorDetails(doctor:Doctor):Observable<any>
+  {
+    return this.http.put<any>(`${this.baseUrl}/UpdateDoctorDetails`, doctor, { headers: this.authHeader });
+  }
 
+  getDoctorsBySpecialization(specializationCode:string): Observable<Doctor[]> {
+    return this.http.get<Doctor[]>(`${this.baseUrl}/DoctorBySpecialization/${specializationCode}`,{ headers: this.authHeader });
+  }
   addDoctor(doctor: Doctor): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/AddDoctor`, doctor, { headers: this.authHeader });
   }

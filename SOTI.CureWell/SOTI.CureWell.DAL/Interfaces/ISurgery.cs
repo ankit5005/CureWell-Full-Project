@@ -10,6 +10,7 @@ namespace SOTI.CureWell.DAL.Interfaces
     public interface ISurgery
     {
         List<Surgery> GetAllSurgeryTypeForToday();
+        Surgery GetSurgeryById(int surgeryId);
         bool UpdateSurgery(Surgery surgeryObj);
     }
 }

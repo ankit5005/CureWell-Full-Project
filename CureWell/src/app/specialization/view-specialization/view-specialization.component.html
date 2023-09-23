@@ -1,1 +1,49 @@
-<p>view-specialization works!</p>
+<Section class="d-flex justify-content-center">
+
+    <div class="card custom-card">
+
+        <table class="shadow table custom-table bg-body rounded" style="margin: 0; padding: 0">
+
+            <thead>
+
+                <tr>
+
+                    <th scope="col">Specialization Code</th>
+
+                    <th scope="col">Specialization Name</th>
+
+                    <th scope="col">Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr *ngFor="let specialization of specializations">
+
+                    <td>{{ specialization.specializationCode }}</td>
+
+                    <td>{{ specialization.specializationName }}</td>
+
+                    <td>
+
+                        <a name="" id="" class="btn btn-primary" [routerLink]="[
+
+                '/doctor/view-doctor/',
+
+                specialization.specializationCode
+
+              ]" role="button">View Doctor</a>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</Section>

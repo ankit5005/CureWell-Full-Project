@@ -1,0 +1,75 @@
+@media (max-width:365px)
+
+{
+
+    .custom-card{
+
+        width:100%;
+
+        padding: 0px;
+
+        display: none !important;
+
+       
+
+    }
+
+     .custom-table
+
+    {
+
+         margin-right: 10px;
+
+         width: 50%;
+
+     }
+
+}
+
+@media (max-width:768)
+
+{
+
+    .custom-card{
+
+        width: 75%;
+
+ 
+
+    }
+
+}
+
+/* Medium screen size and larger */
+
+@media (min-width: 768px) {
+
+    .custom-card {
+
+        padding: 1.2rem 1.2rem;
+
+        width: 95%;
+
+        /* Add padding on medium and larger screens */
+
+    }
+
+}
+
+ 
+
+/* Extra-large screen size and larger */
+
+@media (min-width: 1200px) {
+
+    .custom-card {
+
+        width: 75%;
+
+        padding: 1rem 1rem;
+
+        /* Set width to 75% on extra-large screens */
+
+    }
+
+}

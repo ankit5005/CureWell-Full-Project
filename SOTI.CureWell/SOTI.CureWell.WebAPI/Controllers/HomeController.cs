@@ -169,6 +169,18 @@ namespace SOTI.CureWell.WebAPI.Controllers
             }
             return Ok(false);
         }
+
+        [HttpGet]
+        [Route("GetSurgeryById/{surgeryId}")]
+        public IHttpActionResult GetSurgeryById([FromUri] int surgeryId)
+        {
+            var res = _surgery.GetSurgeryById(surgeryId);
+            if (res == null)
+            {
+                return BadRequest();
+            }
+            return Ok(res);
+        }
     }
 
 }

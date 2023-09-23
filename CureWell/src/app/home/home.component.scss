@@ -1,0 +1,112 @@
+// All defined color
+$gray-bg: #f4f9fc;
+
+// All typography code
+body {
+
+    line-height: 1.6;
+
+    font-family: "Roboto", sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+
+    font-size: 16px;
+
+    color: #6F8BA4;
+
+    font-weight: 400;
+
+    overflow-x: hidden;
+
+}
+
+p {
+
+    line-height: 30px;
+
+    color: #6F8BA4 !important;
+
+}
+
+h4,
+.h4 {
+
+    font-size: 1.3rem;
+
+    line-height: 30px;
+
+}
+
+h1,
+.h1,
+
+h2,
+.h2,
+
+h3,
+.h3,
+
+h4,
+.h4,
+
+h5,
+.h5,
+
+h6,
+.h6 {
+
+    font-family: "Exo", sans-serif;
+
+    font-weight: 700;
+
+    color: #222;
+
+}
+
+
+
+
+
+
+
+//All normal code
+
+.service {
+
+    padding: 100px 0;
+
+    background-color: $gray-bg;
+
+}
+
+.service .service-item {
+
+    background: #fff;
+
+    padding: 30px;
+
+    border-radius: 5px;
+
+}
+
+.service .icon {
+
+    float: left;
+
+    margin-bottom: 10px;
+
+}
+
+.service .content {
+
+    clear: both;
+
+}
+
+.service-icons {
+
+    color: #e12454;
+
+    font-size: 50px;
+
+}

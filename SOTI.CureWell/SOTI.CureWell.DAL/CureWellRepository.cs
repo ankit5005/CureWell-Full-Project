@@ -248,51 +248,6 @@ namespace SOTI.CureWell.DAL
         }
 
         /// <summary>
-        /// Retrieves all the doctors with the specified specialization
-        /// </summary>
-        /// <param name="specializationCode"></param>
-        /// <returns>a list of doctor specializations</returns>
-        public List<DoctorSpecialization> GetDoctorsBySpecialization(string specializationCode)
-        {
-            List<DoctorSpecialization> doctorSpecializationList = null;
-            try
-            {
-                using (_connection = new SqlConnection(SqlConnectionString.GetConnectionString))
-                {
-                    using (_adapter = new SqlDataAdapter("Select * from DoctorSpecialization", _connection))
-                    {
-                        using (_ds = new DataSet())
-                        {
-                            _adapter.Fill(_ds, "DoctorSpecialization");
-                            doctorSpecializationList = _ds.Tables["DoctorSpecialization"].AsEnumerable()
-                                .Where(p => p.Field<string>("SpecializationCode") == specializationCode)
-                                .Select(x => new DoctorSpecialization
-                                {
-                                    DoctorId = x.Field<int>("DoctorId"),
-                                    SpecializationCode = x.Field<string>("SpecializationCode"),
-                                    SpecializationDate = x.Field<DateTime>("SpecializationDate")
-                                }).ToList();
-                            return doctorSpecializationList;
-                        }
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex);
-            }
-            catch (NullReferenceException ex)
-            {
-                Console.WriteLine(ex);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-            return doctorSpecializationList;
-        }
-
-        /// <summary>
         /// Updates a particular doctor in the doctor table
         /// </summary>
         /// <param name="dObj"></param>
@@ -393,6 +348,100 @@ namespace SOTI.CureWell.DAL
                 Console.WriteLine(ex);
             }
             return false;
+        }
+
+        /// <summary>
+        /// Retrieves all the doctors with the specified specialization
+        /// </summary>
+        /// <param name="specializationCode"></param>
+        /// <returns>a list of doctor specializations</returns>
+        public List<Doctor> GetDoctorsBySpecialization(string specializationCode)
+        {
+            List<Doctor> doctorSpecializationList = null;
+            try
+            {
+                using (_connection = new SqlConnection(SqlConnectionString.GetConnectionString))
+                {
+                    using (_adapter = new SqlDataAdapter("usp_DoctorsBySpecialization", _connection))
+                    {
+                        _adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        _adapter.SelectCommand.Parameters.AddWithValue("@specializationCode", specializationCode);
+                        using (_ds = new DataSet())
+                        {
+                            _adapter.Fill(_ds, "DoctorsSpecialization");
+                            doctorSpecializationList = _ds.Tables["DoctorsSpecialization"].AsEnumerable()
+                                .Select(x => new Doctor
+                                {
+                                    DoctorId = x.Field<int>("DoctorId"),
+                                    DoctorName = x.Field<string>("DoctorName")
+                                }).ToList();
+                            return doctorSpecializationList;
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return doctorSpecializationList;
+        }
+
+        public Surgery GetSurgeryById(int surgeryId)
+        {
+            Surgery surgery = null;
+            try
+            {
+                using (_connection = new SqlConnection(SqlConnectionString.GetConnectionString))
+                {
+                    using (_adapter = new SqlDataAdapter("Select * from Surgery", _connection))
+                    {
+                        using (_ds = new DataSet())
+                        {
+                            _adapter.Fill(_ds, "Surgery");
+                            _adapter.FillSchema(_ds, SchemaType.Source);
+
+
+
+                            surgery = _ds.Tables["Surgery"].AsEnumerable()
+                                .Where(p => p.Field<int>("SurgeryId") == surgeryId)
+                                .Select(x => new Surgery
+                                {
+                                    SurgeryId = x.Field<int>("SurgeryId"),
+                                    DoctorId = x.Field<int>("DoctorId"),
+                                    SurgeryDate = x.Field<DateTime>("SurgeryDate"),
+                                    StartTime = x.Field<Decimal>("StartTime"),
+                                    EndTime = x.Field<decimal>("EndTime"),
+                                    SurgeryCategory = x.Field<string>("SurgeryCategory")
+                                }).FirstOrDefault();
+
+
+
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return surgery;
         }
     }
 }

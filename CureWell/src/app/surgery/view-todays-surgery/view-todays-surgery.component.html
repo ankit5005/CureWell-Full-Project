@@ -1,1 +1,63 @@
-<p>view-todays-surgery works!</p>
+<div class="text-center">{{ errorMsg }}</div>
+
+<div *ngIf="errorMsg == null" class="row mt-3">
+
+    <div class="col-md-8 mx-auto text-center">
+
+        <h1 class="p-3">View Today's Surgery</h1>
+
+        <table class="table table-bordered table-hover">
+
+            <thead>
+
+                <tr>
+
+                    <th>Surgery Id</th>
+
+                    <th>Doctor Id</th>
+
+                    <th>Surgery Date</th>
+
+                    <th>Start Time</th>
+
+                    <th>End Time</th>
+
+                    <th>Surgery Category</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr *ngFor="let s of surgeryList">
+
+                    <ng-container *ngIf="getSurgeryDate(s) == getCurrentDate()">
+
+                    <td>{{ s.surgeryId }}</td>
+
+                    <td>{{ s.doctorId }}</td>
+
+                    <td>{{ s.surgeryDate | date: 'dd/MM/yyyy' }}</td>
+
+                    <td>{{ s.startTime }}</td>
+
+                    <td>{{ s.endTime }}</td>
+
+                    <td>{{ s.surgeryCategory }}</td>
+
+                    <td><div class="btn btn-outline-info" (click)="editSurgery(s.surgeryId)">Edit Surgery Time</div></td>
+
+                    </ng-container>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

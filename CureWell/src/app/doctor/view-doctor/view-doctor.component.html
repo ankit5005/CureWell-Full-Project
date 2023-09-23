@@ -1,16 +1,17 @@
 <h1 class="text-center mb-3">View Doctors</h1>
-<div class="col-lg-6 col-md-6  col-sm-6 col-xs-6 offset-3">
-    <table class="table table-bordered ">
+<div class="col-lg-5 col-md-6  col-sm-6 col-xs-6 text-center offset-3">
+    <table class="table table-bordered p-3 text-center">
         <tr>
             <th>Doctor Id</th>
             <th>Doctor Name</th>
             <th>Doctor Action</th>
         </tr>
-        <tr *ngFor="let d of doctorList">
+        <tr *ngFor="let d of doctorList" class="p-3">
             <td>{{d.doctorId}}</td>
-            <td>{{d.doctorName}}</td>
-            <td>
-                <a class="btn btn-primary" type="button" (click)="editDoctorDetails(d.doctorId)">Edit Doctor Details</a>
+            <td>{{d.doctorName | titlecase}}</td>
+            <td class="text-center p-2">
+                <div class="btn btn-primary" 
+                (click)="editDoctorDetails(d.doctorId)">Edit Doctor Details</div>
             </td>
         </tr>
     </table>

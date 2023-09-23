@@ -35,9 +35,9 @@ export class ViewDoctorComponent {
       }
      })
   }
-  getDoctorBySpecialization()
+  getDoctorBySpecialization(specializationCode:string)
   {
-    this.sub$=this.doctorService.getDoctors().subscribe({
+    this.sub$=this.doctorService.getDoctorsBySpecialization(specializationCode).subscribe({
       next:(data)=>{
         console.log(data);
         this.doctorList=data;
@@ -45,18 +45,17 @@ export class ViewDoctorComponent {
       error:(err)=>{
         console.error(err)
         this.errorMsg="Some error occured";
-
       }
      })
   }
 
   ngOnInit()
   {
-    this.specializationCode=this.router.snapshot.params["doctorId"];
+    this.specializationCode=this.router.snapshot.params["specializationCode"];
     console.log(this.specializationCode);
     if(this.specializationCode)
     {
-       this.getDoctorBySpecialization();
+       this.getDoctorBySpecialization(this.specializationCode);
     }
     else{
       this.getDoctor();
