@@ -20,7 +20,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class SurgeryService {
 
-    private baseUrl = "https://localhost:44351/api/home";
+    private baseUrl = "http://localhost:44352/api/home";
 
  
 
@@ -39,6 +39,12 @@ export class SurgeryService {
     getSurgeryById(surgeryId: number) : Observable<Surgery>{
 
         return this.http.get<Surgery>(`${this.baseUrl}/GetSurgeryById/${surgeryId}`);
+
+    }
+
+    updateSurgery(surgery : Surgery) : Observable<boolean>{
+
+        return this.http.put<boolean>(`${this.baseUrl}/UpdateSurgery`, surgery);
 
     }
 

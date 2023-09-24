@@ -88,3 +88,23 @@ else
   EndTime=@EndTime,SurgeryCategory=@SurgeryCategory where SurgeryId=@SurgeryId
   return 1
  end
+
+
+Create Proc usp_DoctorsBySpecialization (@specializationCode char(3))
+as
+Begin
+	Select d.DoctorId as DoctorId, d.DoctorName as DoctorName from Doctor d  
+	JOIN DoctorSpecialization ds ON  d.DoctorId = ds.DoctorId  and ds.SpecializationCode=@specializationCode
+end
+
+ALTER proc [dbo].[usp_UpdateSurgery](@SurgeryId int, @StartTime Decimal(4,2),
+@EndTime Decimal(4,2))
+as
+if(not exists(Select 'a' from Surgery where SurgeryId=@SurgeryId))
+   return -1
+else
+begin
+  Update Surgery set StartTime=@StartTime,
+  EndTime=@EndTime where SurgeryId=@SurgeryId
+  return 1
+end

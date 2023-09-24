@@ -1,64 +1,39 @@
-<section>
-    <div class="formInCenter">
-        <div>
+<!-- <section> -->
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 offset-lg-1">
+        <!-- <div> -->
             <div class="LoginF">
-
-                <h2 class="header">
-
-                    Login
-
-                </h2>
+                <h2 class="text-center">Login</h2>
                 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                     <div class="">
                         <label for="id">Email/Id:</label>
                         <input type="text" id="id" class="form-control" formControlName="id">
                         <span *ngIf="id && id.invalid && id.touched" style="color: rgb(255, 44, 41);">
                             *This Field is Required*
-
                         </span>
-
                     </div>
-
                     <div class="">
-
                         <label for="password">Password:</label>
-
                         <input type="password" id="password" class="form-control" formControlName="password">
-
                     </div>
 
                     <span *ngIf="password && password.invalid && password.touched" style="color: rgb(255, 44, 41);">
-
                         *Password Strength is weak *
-
                     </span>
-
                     <div>
-
                         <br>
-
                         <button type="submit" class="btn btn-primary">Submit</button>
-
                     </div>
-
                     <div>
-
                         <br>
-
-                        <a routerLink="/sign-up">Sign Up Account</a>
-
+                        <a routerLink="/signup">Sign Up Account</a>
                     </div>
-
                 </form>
-
-
-
-
-
             </div>
-
         </div>
-
+    <!-- </div> -->
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <img src="../../assets/images/415.jpg" alt="" class="login-img">
     </div>
-
-</section>
+</div>
+<!-- </section> -->

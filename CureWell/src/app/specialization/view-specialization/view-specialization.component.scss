@@ -1,75 +1,165 @@
-@media (max-width:365px)
-
-{
-
-    .custom-card{
-
-        width:100%;
-
-        padding: 0px;
-
-        display: none !important;
-
-       
-
-    }
-
-     .custom-table
-
-    {
-
-         margin-right: 10px;
-
-         width: 50%;
-
-     }
-
-}
-
-@media (max-width:768)
-
-{
-
-    .custom-card{
-
-        width: 75%;
-
  
 
-    }
+//View specialization section
+
+.section-title {
+
+    margin-bottom: 70px;
 
 }
 
-/* Medium screen size and larger */
+.section-title h2 {
 
-@media (min-width: 768px) {
+    color: #223a66;
 
-    .custom-card {
+}
 
-        padding: 1.2rem 1.2rem;
+.divider {
 
-        width: 95%;
+    width: 40px;
 
-        /* Add padding on medium and larger screens */
+    height: 5px;
 
-    }
+    background: #e12454;
+
+}
+
+.main-image{
+
+    transition: transform 0.5s ease-in-out;
+
+}
+
+.main-image:hover {
+
+   
+
+   
+
+    transform: scale(1.1, 1.1);
+
+   
+
+        /* Example transition with a 0.5s duration */
+
+    /* Scale horizontally by 1.2 and vertically by 0.8 */
+
+}
+
+.content h4:hover{
+
+    font-size: 40px;
 
 }
 
  
 
-/* Extra-large screen size and larger */
+.content h4 {
 
-@media (min-width: 1200px) {
+    transition: font-size 0.5s ease-in-out;
 
-    .custom-card {
+}
 
-        width: 75%;
+ 
 
-        padding: 1rem 1rem;
+.btn-grad {
 
-        /* Set width to 75% on extra-large screens */
+    background-image: linear-gradient(to left, #d42b11 0%, #223a66 100%, #7aa14b 100%);
 
-    }
+    margin: 10px;
+
+    padding: 15px 45px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    transition: 0.5s;
+
+    background-size: 200% auto;
+
+    color: white;
+
+    box-shadow: 0 0 20px #eee;
+
+    border-radius: 10px;
+
+    display: block;
+
+    text-decoration: none;
+
+}
+
+ 
+
+.btn-grad:hover {
+
+    background-position: center;
+
+    /* change the direction of the change here */
+
+    color: #fff;
+
+    text-decoration: none;
+
+}
+
+ 
+
+.btn1 {
+
+    display: inline-block;
+
+    font-size: 14px !important;
+
+    font-size: 0.8125rem;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+    padding: 0.75rem 2rem;
+
+    font-family: "Exo", sans-serif;
+
+    text-transform: uppercase;
+
+    border-radius: 5px;
+
+    border: 2px solid transparent;
+
+    transition: all .35s ease;
+
+    text-decoration: none;
+
+}
+
+ 
+
+.btn1:hover {
+
+    background: linear-gradient(to right, #ff0000, #00ff00);
+
+    border-color: transparent;
+
+}
+
+ 
+
+.btn-round-full {
+
+    border-radius: 50px;
+
+}
+
+ 
+
+.btn-main {
+
+    background: #223a66;
+
+    color: #fff;
+
+    border-color: #223a66;
 
 }

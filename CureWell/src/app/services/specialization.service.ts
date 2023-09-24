@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 
 export class SpecializationService {
-  private apiUrl = 'https://localhost:44351/api/Home';
+  private apiUrl = 'http://localhost:44352/api/Home';
 
   constructor(private http: HttpClient) { }
   getSpecialization(): Observable<Specialization[]> {

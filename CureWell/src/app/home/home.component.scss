@@ -1,24 +1,14 @@
-// All defined color
-$gray-bg: #f4f9fc;
+// defined color
+
+$gray-bg:#f4f9fc;
+
+ 
+
+ 
 
 // All typography code
-body {
 
-    line-height: 1.6;
-
-    font-family: "Roboto", sans-serif;
-
-    -webkit-font-smoothing: antialiased;
-
-    font-size: 16px;
-
-    color: #6F8BA4;
-
-    font-weight: 400;
-
-    overflow-x: hidden;
-
-}
+ 
 
 p {
 
@@ -28,8 +18,7 @@ p {
 
 }
 
-h4,
-.h4 {
+h4, .h4 {
 
     font-size: 1.3rem;
 
@@ -37,23 +26,17 @@ h4,
 
 }
 
-h1,
-.h1,
+h1,.h1,
 
-h2,
-.h2,
+h2,.h2,
 
-h3,
-.h3,
+h3,.h3,
 
-h4,
-.h4,
+h4,.h4,
 
-h5,
-.h5,
+h5,.h5,
 
-h6,
-.h6 {
+h6,.h6 {
 
     font-family: "Exo", sans-serif;
 
@@ -63,15 +46,15 @@ h6,
 
 }
 
+ 
 
+ 
 
-
-
-
+ 
 
 //All normal code
 
-.service {
+.service{
 
     padding: 100px 0;
 
@@ -86,6 +69,14 @@ h6,
     padding: 30px;
 
     border-radius: 5px;
+
+    transition: transform 0.5s ease-in-out;
+
+}
+
+.service .service-item:hover{
+
+    transform: scale(1.1,1.1);
 
 }
 
@@ -103,10 +94,12 @@ h6,
 
 }
 
-.service-icons {
+.service-icons{
 
     color: #e12454;
 
     font-size: 50px;
 
 }
+
+ 

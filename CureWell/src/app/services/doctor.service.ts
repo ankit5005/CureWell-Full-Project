@@ -6,7 +6,7 @@ import { Doctor } from '../models/doctor';
   providedIn: 'root'
 })
 export class DoctorService {
-  private baseUrl = "https://localhost:44351/api/Home"
+  private baseUrl = "http://localhost:44352/api/Home"
   private authHeader!: HttpHeaders;
 
 

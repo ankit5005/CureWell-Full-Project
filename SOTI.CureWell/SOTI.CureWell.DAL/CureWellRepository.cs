@@ -307,20 +307,16 @@ namespace SOTI.CureWell.DAL
             {
                 using (_connection = new SqlConnection(SqlConnectionString.GetConnectionString))
                 {
-     
+
                     using (_adapter = new SqlDataAdapter("usp_UpdateSurgery", _connection))
                     {
 
                         _adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         _adapter.SelectCommand.Parameters.AddWithValue("@SurgeryId", sObj.SurgeryId);
-                        _adapter.SelectCommand.Parameters.AddWithValue("@DoctorId", sObj.DoctorId);
-                        _adapter.SelectCommand.Parameters.AddWithValue("@SurgeryDate", sObj.SurgeryDate);
                         _adapter.SelectCommand.Parameters.AddWithValue("@StartTime", sObj.StartTime);
                         _adapter.SelectCommand.Parameters.AddWithValue("@EndTime", sObj.EndTime);
-                        _adapter.SelectCommand.Parameters.AddWithValue("@SurgeryCategory", sObj.SurgeryCategory);
                         SqlParameter ret = new SqlParameter() { Direction = ParameterDirection.ReturnValue };
                         _adapter.SelectCommand.Parameters.Add(ret);
-
                         using (_ds = new DataSet())
                         {
                             _adapter.Fill(_ds, "Surgery");
@@ -328,14 +324,13 @@ namespace SOTI.CureWell.DAL
                             if (Convert.ToInt32(ret.Value) > 0)
                             {
                                 return true;
-
                             }
                             return false;
                         }
                     }
                 }
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine(ex);
             }
