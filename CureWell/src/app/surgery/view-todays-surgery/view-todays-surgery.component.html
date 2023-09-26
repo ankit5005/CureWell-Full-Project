@@ -1,63 +1,34 @@
 <div class="text-center">{{ errorMsg }}</div>
-
-<div *ngIf="errorMsg == null" class="row mt-3">
-
-    <div class="col-md-8 mx-auto text-center">
-
-        <h1 class="p-3">View Today's Surgery</h1>
-
-        <table class="table table-bordered table-hover">
-
-            <thead>
-
-                <tr>
-
-                    <th>Surgery Id</th>
-
-                    <th>Doctor Id</th>
-
-                    <th>Surgery Date</th>
-
-                    <th>Start Time</th>
-
-                    <th>End Time</th>
-
-                    <th>Surgery Category</th>
-
-                    <th>Action</th>
-
-                </tr>
-
-            </thead>
-
-            <tbody>
-
-                <tr *ngFor="let s of surgeryList">
-
-                    <ng-container *ngIf="getSurgeryDate(s) == getCurrentDate()">
-
-                    <td>{{ s.surgeryId }}</td>
-
-                    <td>{{ s.doctorId }}</td>
-
-                    <td>{{ s.surgeryDate | date: 'dd/MM/yyyy' }}</td>
-
-                    <td>{{ s.startTime }}</td>
-
-                    <td>{{ s.endTime }}</td>
-
-                    <td>{{ s.surgeryCategory }}</td>
-
-                    <td><div class="btn btn-outline-info" (click)="editSurgery(s.surgeryId)">Edit Surgery Time</div></td>
-
-                    </ng-container>
-
-                </tr>
-
-            </tbody>
-
-        </table>
-
+<div *ngIf="errorMsg == null" class="row mt-3 main">
+    <div class="col-md-10 mx-auto text-center">
+        <h1 class="p-3 mb-2 text-color text-center">View Today's Surgery</h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-hover1 table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">Surgery Id</th>
+                        <th scope="col">Doctor Id</th>
+                        <th scope="col">Surgery Date</th>
+                        <th scope="col">Start Time</th>
+                        <th scope="col">End Time</th>
+                        <th scope="col">Surgery Category</th>
+                        <th scope="col" *ngIf="role=='Admin'">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let s of surgeryList" [class.table-danger]="getSurgeryDate(s.surgeryDate) != getCurrentDate()">
+                        <td>{{ s.surgeryId }}</td>
+                        <td>{{ s.doctorId }}</td>
+                        <td>{{ s.surgeryDate | date: 'dd/MM/yyyy' }}</td>
+                        <td>{{ s.startTime }}</td>
+                        <td>{{ s.endTime }}</td>
+                        <td>{{ s.surgeryCategory }}</td>
+                        <td *ngIf="role=='Admin'">
+                            <div class="btn btn-color"  (click)="editSurgery(s.surgeryId)">Edit Surgery Time</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-
 </div>

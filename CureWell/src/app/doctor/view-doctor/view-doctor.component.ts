@@ -3,6 +3,10 @@ import { Doctor } from 'src/app/models/doctor';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DoctorService } from 'src/app/services/doctor.service';
+import { Specialization } from 'src/app/models/specialization';
+import { DoctorSpecialization } from 'src/app/models/doctor-specialization';
+import { SpecializationService } from 'src/app/services/specialization.service';
+import { AccountService } from 'src/app/services/account.service';
 @Component({
   selector: 'app-view-doctor',
   templateUrl: './view-doctor.component.html',
@@ -14,8 +18,13 @@ export class ViewDoctorComponent {
   showMsgDiv:string="";
   errorMsg:string="";
   specializationCode:string="";
-
-  constructor(private route:Router,private doctorService:DoctorService,private router:ActivatedRoute){}
+  specializations:Specialization[]=[];
+  selectedSpec:string="default";
+  role:string="";
+  constructor(private route:Router,private doctorService:DoctorService,
+    private router:ActivatedRoute
+    ,private specializationService:SpecializationService,
+    private accountService:AccountService){}
   editDoctorDetails(doctorId:number)
   {
     this.route.navigate(['/doctor/update-doctor',doctorId]);
@@ -48,9 +57,36 @@ export class ViewDoctorComponent {
       }
      })
   }
+  onChange(event:string)
+  {
+    this.getDoctorBySpecialization(event);
+  }
+
+  getAllSpecialization()
+  {
+    this.sub$=this.specializationService.getSpecialization().subscribe({
+      next:(data)=>{
+        console.log(data);
+        this.specializations=data;
+      },
+      error:(err)=>{
+        console.error(err)
+        this.errorMsg="Some error occured";
+      }
+     })
+  }
 
   ngOnInit()
   {
+    this.sub$=this.accountService.getRole().subscribe(data =>{
+      
+      console.log(data);
+      this.role=data;
+    },
+    (err) => {
+      console.error(err.status);
+     // this.statusCode = err.status;
+    })
     this.specializationCode=this.router.snapshot.params["specializationCode"];
     console.log(this.specializationCode);
     if(this.specializationCode)
@@ -60,6 +96,7 @@ export class ViewDoctorComponent {
     else{
       this.getDoctor();
     }
+    this.getAllSpecialization();
   }
 
   ngOnDestroy(): void {

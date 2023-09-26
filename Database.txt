@@ -108,3 +108,23 @@ begin
   EndTime=@EndTime where SurgeryId=@SurgeryId
   return 1
 end
+
+Delete from Users
+Insert into Users(UserName,EmailId,Age,PhoneNumber,Password,Role) values('admin','admin@gmail.com',21,'8765432314','admin1234','Admin')
+Insert into Users(UserName,EmailId,Age,PhoneNumber,Password) values('Akshita','akshita@gmail.com',21,'7976456852','akshita123')
+
+CREATE TABLE Appointment(
+    AppointmentID INT IDENTITY(100,1) CONSTRAINT pk_Appointment_AppointmentId PRIMARY KEY,
+	EmailId varchar(255) not null,
+    SpecializationName VARCHAR(50) NOT NULL,
+    DoctorName varchar(25) NOT NULL,
+    AppointmentDate date NOT NULL,
+    PatientName varchar(25) NOT NULL,
+	[Description] varchar(255) Not Null
+);
+
+
+update Surgery set SurgeryDate = '2023-09-26'
+select * from Surgery
+sp_help Surgery
+insert Surgery values(1002,'2023-09-27',6,15,'GYN')

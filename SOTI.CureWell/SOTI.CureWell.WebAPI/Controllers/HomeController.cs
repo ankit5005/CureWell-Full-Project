@@ -6,12 +6,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Claims;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace SOTI.CureWell.WebAPI.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    //[EnableCors(origins: "*", headers: "*", methods: "*")]
     [RoutePrefix("api/Home")]
     /// <summary>
     /// Controller for handling home-related actions.
@@ -22,6 +24,7 @@ namespace SOTI.CureWell.WebAPI.Controllers
         private readonly ISurgery _surgery = null;
         private readonly ISpecialization _specialization = null;
         private readonly IDoctorSpecialization _doctorSpecialization = null;
+        private readonly IUser _user = null;
 
         /// <summary>
         /// Constructor to initialize the class variables
@@ -30,12 +33,14 @@ namespace SOTI.CureWell.WebAPI.Controllers
         /// <param name="surgery"></param>
         /// <param name="specialization"></param>
         /// <param name="doctorSpecialization"></param>
-        public HomeController(IDoctor doctor,ISurgery surgery,ISpecialization specialization,IDoctorSpecialization doctorSpecialization)
+        public HomeController(IDoctor doctor, ISurgery surgery, ISpecialization specialization, IDoctorSpecialization doctorSpecialization,
+            IUser user)
         {
             _surgery = surgery;
             _doctor = doctor;
             _specialization = specialization;
             _doctorSpecialization = doctorSpecialization;
+            _user = user;
         }
 
         /// <summary>
@@ -57,7 +62,7 @@ namespace SOTI.CureWell.WebAPI.Controllers
         /// Controller to add doctor in the doctor table
         /// </summary>
         /// <param name="doctor"></param>
-       
+
         [HttpPost]
         [Route("AddDoctor")]
         public IHttpActionResult AddDoctor([FromBody] Doctor doctor)
@@ -107,9 +112,55 @@ namespace SOTI.CureWell.WebAPI.Controllers
         }
 
         /// <summary>
-        /// Controller to delete the doctor
+        /// Controller to get all the users
         /// </summary>
-        /// <param name="doctorId"></param>
+        [HttpGet]
+        [Route("AllUsers")]
+        public IHttpActionResult GetUsers()
+        {
+            var res = _user.GetAllUsers();
+            if (res == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                return Ok(res);
+            }
+        }
+
+        /// <summary>
+        /// Controller to add a user
+        /// </summary>
+        [HttpGet]
+        [Route("AddUser")]
+        public IHttpActionResult AddUser([FromBody] User user)
+        {
+            var res = _user.AddUser(user);
+            if (res == true)
+            {
+                return Ok(true);
+            }
+            return BadRequest();
+        }
+
+        /// <summary>
+        /// Controller to get a user by its Id
+        /// </summary>
+        /// <param name="userId"></param>
+        /// 
+        [HttpGet]
+        [Route("GetUserById/{userId}")]
+        public IHttpActionResult GetUserById([FromUri] int userId)
+        {
+            var res = _user.GetUserById(userId);
+            if (res == null)
+            {
+                return BadRequest();
+            }
+            return Ok(res);
+        }
+
         [HttpDelete]
         [Route("DeleteDoctor/{doctorId}")]
         public IHttpActionResult DeleteDoctor([FromUri] int doctorId)
@@ -180,6 +231,16 @@ namespace SOTI.CureWell.WebAPI.Controllers
                 return BadRequest();
             }
             return Ok(res);
+        }
+
+        [Authorize]
+        [HttpGet]
+        [Route("GetRole")]
+        public IHttpActionResult GetRole()
+        {
+            var identity = (ClaimsIdentity)HttpContext.Current.User.Identity;
+            var role = identity.FindFirst(ClaimTypes.Role);
+            return Ok(role.Value);
         }
     }
 

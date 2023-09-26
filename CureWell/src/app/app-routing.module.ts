@@ -12,6 +12,7 @@ import { ErrorComponent } from './shared/error/error.component';
 import { UpdateSurgeryComponent } from './surgery/update-surgery/update-surgery.component';
 import { RegisterComponent } from './register/register.component';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { authGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {path:"",redirectTo:"/home",pathMatch:"full"},
@@ -22,10 +23,10 @@ const routes: Routes = [
   {path:"doctor/view-doctor/:specializationCode",component:ViewDoctorComponent},
   {path:"doctor/add-doctor",component:AddDoctorComponent},
   {path:"doctor/update-doctor/:doctorId",component:UpdateDoctorComponent},
-  {path:"surgery/update-surgery",component:UpdateSurgeryComponent},
+  {path:"surgery/update-surgery/:surgeryId",component:UpdateSurgeryComponent},
   {path:"surgery/view-todays-surgery",component:ViewTodaysSurgeryComponent},
   {path:"specialization/view-specialization",component:ViewSpecializationComponent},
-  {path:"make-appointment",component:AppointmentComponent},
+  {path:"make-appointment",component:AppointmentComponent,canActivate:[authGuard]},
   {path:"about-us",component:AboutUsComponent},
   {path:"**",component:ErrorComponent},
 ];

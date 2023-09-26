@@ -1,0 +1,105 @@
+.section {
+
+    padding: 100px 0;
+
+}
+
+.bg-1 {
+
+    background: url(/src/assets/images/pexels-charlss-gonzhu-15277956.jpg) no-repeat 50% 50% !important;
+
+    background-size: cover;
+
+    position: relative;
+
+}
+
+ 
+
+.page-title {
+
+    padding: 120px 0px 70px 0px;
+
+    position: relative;
+
+}
+
+.overlay:before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    bottom: 0;
+
+    right: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    opacity: 0.9;
+
+    background: #223a66;
+
+}
+
+.text-white {
+
+    color: #fff !important;
+
+}
+
+.page-title .block h1 {
+
+    color: #fff !important;
+
+}
+
+ 
+
+.text-lg {
+
+    font-size: 50px;
+
+}
+
+.text-color{
+
+  color: #223a66 !important;
+
+  font-size: 44px !important;
+
+}
+.pinkline{
+    width: 50px;
+    height: 10px;
+    background-color: #e12454;
+}
+.drdiv{
+    text-align:center;
+    display: flex !important;
+    align-items: center;
+    justify-content: center !important;
+    flex-direction: column !important;
+}
+
+.drh2{
+    font-size: 35px;
+    color: #223a66;
+}
+.depselect{
+    color: #223a66;
+    padding: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: linear-gradient(to right,#e12454,pink);
+    border-radius: 20px;
+    // background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%2326749a'><polygon points='0,0 100,0 50,50'/></svg>")
+    //   no-repeat;
+    // background-color: #ccc;
+}

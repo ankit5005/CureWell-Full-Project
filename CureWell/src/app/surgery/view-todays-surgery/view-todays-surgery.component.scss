@@ -1,0 +1,38 @@
+
+.text-color {
+    color: #e12454 !important;
+    font-size: 44px !important;
+  }
+
+  .btn-color{
+    color: #e12454;
+    border-radius: 20px;
+  }
+  
+  .btn-color:hover{
+    color:white;
+    background: linear-gradient(to right, #df2b58, #da4c6f, #df7a93);
+  }
+
+  .main{
+    background-image: url(../../../assets/images/view-surgery-background.jpg);
+  }
+
+  /* Add this CSS for table header styling */
+.table thead th {
+    background-color: #223a66; /* Background color for table header cells */
+    color: white; /* Text color for table header cells */
+    font-weight: bold; /* Bold text for table header cells */
+    text-align: center; /* Center-align text in table header cells */
+    border-color: #e12454; /* Border color for table header cells */
+    padding: 10px; /* Padding for table header cells */
+}
+
+/* Add this CSS to style table rows on hover */
+.table-hover {
+    background-color: #ce254d !important; /* Background color for rows on hover */
+}
+
+.table-hover1 tr,td :hover  {
+    background-color: #ce254d !important; /* Background color for rows on hover */
+}

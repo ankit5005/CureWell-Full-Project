@@ -1,7 +1,7 @@
 // defined color
 
 $gray-bg:#f4f9fc;
-
+$pink:#e12454;
  
 
  
@@ -101,5 +101,316 @@ h6,.h6 {
     font-size: 50px;
 
 }
+.pinkline{
+    width: 50px;
+    height: 10px;
+    background-color: #e12454;
+}
+
+
+.fa-duotone{
+    color: white;
+    position: relative;
+    left: 10px;
+}
+.homeimgdiv{
+    font-size: 18px;
+    background-image: url("../../assets/images/pexels-gustavo-fring-8770713.jpg");
+    background-size: cover;
+   // background-position-x: left ;
+   // background-position-y: top;
+    //background-position: center;
+}
+.homediv2{
+    box-shadow: 1px 1px 5px #888888;
+    border-radius: 15px;
+    padding: 30px 40px;
+    margin-top: -50px;
+    margin-left: 40px;
+    background-color: white;
+    //box-shadow: 2px 2px 2px solid rgba(0,0,0,0.2);
+}
+.homediv2 h4{
+    color: #223A66 !important;
+    font-weight: bolder;
+}
+.homeh1{
+    color: #223A66 !important;
+    //color: #e12454;
+    font-size: 50px;
+}
+.homeicon{
+    font-size: 50px;
+    color:#223A66;
+}
+
+.nursebtn{
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    color: white;
+    background-color: #223A66;
+}
+
+.ulhours{
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+.homediv2 p{
+    font-size: 15px;
+}
+.ulhours li{
+    border-bottom: 0.2px solid rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.homeimgdiv2{
+   flex: 1;
+   max-width: 30%;
+}
+.homeimgdiv2 img{
+    width: 100%;
+    height: 100%;
+}
+
+.imggallery{
+    display: flex;
+    justify-content: space-evenly;
+    height: fit-content !important;
+}
+.service{
+    margin-top: 40px;
+}
+
+// defined color
+
+$gray-bg:#f4f9fc;
 
  
+
+ 
+
+// All typography code
+
+ 
+
+p {
+
+    line-height: 30px;
+
+    color: #6F8BA4 !important;
+
+}
+
+h4, .h4 {
+
+    font-size: 1.3rem;
+
+    line-height: 30px;
+
+}
+
+h1,.h1,
+
+h2,.h2,
+
+h3,.h3,
+
+h4,.h4,
+
+h5,.h5,
+
+h6,.h6 {
+
+    font-family: "Exo", sans-serif;
+
+    font-weight: 700;
+
+    color: #222;
+
+}
+
+ 
+
+ 
+
+ 
+
+//All services scss
+
+.service{
+
+    padding: 100px 0;
+
+    background-color: $gray-bg;
+
+}
+
+.service .service-item {
+
+    background: #fff;
+
+    padding: 30px;
+
+    border-radius: 5px;
+
+    transition: transform 0.5s ease-in-out;
+
+}
+
+.service .service-item:hover{
+
+    transform: scale(1.1,1.1);
+
+}
+
+.service .icon {
+
+    float: left;
+
+    margin-bottom: 10px;
+
+}
+
+.service .content {
+
+    clear: both;
+
+}
+
+.service-icons{
+
+    color: #e12454;
+
+    font-size: 50px;
+
+}
+
+ 
+
+// starting section-about scss
+
+.section {
+
+    padding: 100px 0;
+
+}
+
+.about-img img {
+
+    border-radius: 5px;
+
+    box-shadow: 0px 0px 30px 0px rgba(0, 42, 106, 0.1);
+
+}
+
+ 
+
+.title-color {
+
+    color: #223a66;
+
+}
+
+.btn-round-full {
+
+    border-radius: 50px;
+
+}
+
+.btn-main-2 {
+
+    background: #e12454;
+
+    color: #fff;
+
+    border-color: #e12454;
+
+}
+
+.btn {
+
+    display: inline-block;
+
+    font-size: 14px;
+
+    font-size: 0.8125rem;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+    padding: 0.75rem 2rem;
+
+    font-family: "Exo", sans-serif;
+
+    text-transform: uppercase;
+
+    border-radius: 5px;
+
+    border: 2px solid transparent;
+
+    transition: all .35s ease;
+
+}
+
+ 
+
+//Section-team section scss
+
+.section-title h2 {
+
+    color: #223a66;
+
+}
+
+.divider {
+
+    width: 40px;
+
+    height: 5px;
+
+    background: #e12454;
+
+}
+
+.btn1 {
+
+    display: inline-block;
+
+    font-size: 14px !important;
+
+    font-size: 0.8125rem;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+    padding: 0.75rem 2rem;
+
+    font-family: "Exo", sans-serif;
+
+    text-transform: uppercase;
+
+    border-radius: 5px;
+
+    border: 2px solid transparent;
+
+    transition: all .35s ease;
+
+    text-decoration: none;
+
+}
+
+ 
+
+.btn1 :hover {
+
+    background: #e12454;
+
+    border-color: transparent;
+
+}

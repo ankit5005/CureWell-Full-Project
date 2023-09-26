@@ -1,49 +1,75 @@
-<div class="card mx-auto" style="width: 50%;">
+<section class="appointment section">
 
-  <div class="card-header ">
+  <div class="container">
 
-    <h2> Update Doctors</h2>
+    <div class="row">
 
-  </div>
+      <div class="col-lg-4">
 
+        <div>
 
-
-  <div class="card-body">
-
-    <form [formGroup]="doctorForm" (ngSubmit)="updateDoctorDetails()">
-
-
-
-      <div class="form-group">
-
-
-
-        <label for="doctorId">Doctor ID</label>
-
-        <!-- [value]="doctorData.doctorId" -->
-
-        <input type="text" class="form-control" id="doctorId" name="doctorId" formControlName="doctorId" readonly />
-
-        <label for="doctorName">Doctor Name</label>
-
-        <input type="text" class="form-control" id="doctorName" name="doctorName" placeholder="Doctor Name"
-          formControlName="doctorName" />
-
-        <div *ngIf="doctorForm.get('doctorName')?.hasError('required') &&
-
-                        (doctorForm.get('doctorName')?.touched || doctorForm.get('doctorName')?.dirty)"
-          class="text-danger">
-
-          Name is required.
+          <img src="../../../assets/images/pexels-los-muertos-crew-8460371.jpg" class="add-img">
 
         </div>
 
       </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="col-lg-8">
 
-    </form>
+        <div class="add-doctor mt-5 mt-lg-0 pl-lg-5">
+
+          <h2 class="mb-2 text-color">Update Doctor Detail</h2>
+
+          <form [formGroup]="doctorForm" (ngSubmit)="updateDoctorDetails()">
+
+            <div class="form-group">
+
+              <label for="doctorId">Doctor ID</label>
+
+              <!-- [value]="doctorData.doctorId" -->
+
+              <input type="text" class="form-control" id="doctorId" name="doctorId" formControlName="doctorId"
+
+                readonly />
+
+              <label for="doctorName">Doctor Name</label>
+
+              <input type="text" class="form-control" id="doctorName" name="doctorName" placeholder="Doctor Name"
+
+                formControlName="doctorName" [ngClass]="{'input-error':(submitted || f['doctorName'].touched) && f['doctorName'].errors}" />
+
+                <div *ngIf="(submitted || f['doctorName'].touched) && f['doctorName'].errors" class="text-danger small">
+
+                  <span *ngIf="f['doctorName'].errors?.['required']">Doctor Name is required</span>
+
+              </div>
+            </div>
+
+            <div class="mt-3">
+
+              <button class="btn1 btn-main btn-round-full" type="submit"
+              >Submit</button>
+
+              <button class="btn" (click)="doReset()">Cancel</button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+ 
+
+      </div>
+
+ 
+
+    </div>
+
+ 
 
   </div>
 
-</div>
+ 
+
+</section>

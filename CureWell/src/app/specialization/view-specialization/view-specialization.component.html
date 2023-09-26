@@ -1,103 +1,70 @@
+<!--Page title section-->
+
+<section class="page-title bg-1">
+
+  <div class="overlay"></div>
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-12" style="position: relative">
+
+        <div class="block text-center">
+
+          <span class="text-white">View All</span>
+
+          <h1 class="text-capitalize mb-5 text-lg">Specialization</h1>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+ 
 <!-- specialization section -->
 
 <section class="section service-2">
 
-    <div class="container">
-  
-      <div class="row justify-content-center">
-  
-        <div class="col-lg-7 text-center">
-  
-          <div class="section-title">
-  
-            <h2>Award winning patient care</h2>
-  
-            <div class="divider mx-auto my-4"></div>
-  
-            <p>
-  
-              Lets know moreel necessitatibus dolor asperiores illum possimus sint
-  
-              voluptates incidunt molestias nostrum laudantium. Maiores porro
-  
-              cumque quaerat.
-  
-            </p>
-  
-          </div>
-  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 text-center">
+        <div class="section-title">
+          <h2>Award winning patient care</h2>
+          <div class="divider mx-auto my-4"></div>
+          <p>
+            Lets know moreel necessitatibus dolor asperiores illum possimus sint
+            voluptates incidunt molestias nostrum laudantium. Maiores porro
+            cumque quaerat.
+          </p>
         </div>
-  
       </div>
-  
-   
-  
-      <div>
-  
-        <div class="row d-flex">
-  
-          <div
-  
-            class="col-lg-4 col-md-6"
-  
-            *ngFor="let specialization of specializations"
-  
-          >
-  
-            <div class="department-block mb-5">
-  
-              <img
-  
-                src="assets/images/service-1.jpg"
-  
-                alt=""
-  
-                class="img-fluid main-image w-100"
-  
-              />
-  
-              <div class="content">
-  
-                <h4 class="mt-4 mb-2 title-color">
-  
-                  {{ specialization.specializationName }}
-  
-                </h4>
-  
-                <p class="mb-4">
-  
-                  Saepe nulla praesentium eaque omnis perferendis a doloremque.
-  
-                </p>
-  
-              </div>
-  
-              <a
-  
-                class="btn1 btn-main btn-round-full"
-  
-                [routerLink]="[
-  
-                  '/doctor/view-doctor/',
-  
-                  specialization.specializationCode
-  
-                ]"
-  
-                >View Doctors <i class="fa-solid fa-angle-right fa-beat"></i
-  
-              ></a>
-  
-            </div>
-  
-          </div>
-  
-        </div>
-  
-      </div>
-  
     </div>
-  
-  </section>
-  
-   
+    <div>
+      <div class="row d-flex">
+        <div class="col-lg-4 col-md-6" *ngFor="let specialization of specializations">
+          <div class="department-block mb-5">
+            <img src="assets/images/service-1.jpg" alt="" class="img-fluid main-image w-100" />
+            <div class="content">
+              <h4 class="mt-4 mb-2 title-color">
+                {{ specialization.specializationName }}
+              </h4>
+              <p class="mb-4">
+                Saepe nulla praesentium eaque omnis perferendis a doloremque.
+              </p>
+            </div>
+            <a class="btn1 btn-main btn-round-full" [routerLink]="[
+                  '/doctor/view-doctor/',
+                  specialization.specializationCode
+                ]">View Doctors <i class="fa-solid fa-angle-right fa-beat"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

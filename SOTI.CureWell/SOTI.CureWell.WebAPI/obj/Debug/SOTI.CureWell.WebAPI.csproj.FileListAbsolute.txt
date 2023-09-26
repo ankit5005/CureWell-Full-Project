@@ -155,3 +155,14 @@ C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureW
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\obj\Debug\SOTI.CureWell.WebAPI.csproj.CopyComplete
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\obj\Debug\SOTI.CureWell.WebAPI.dll
 C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\obj\Debug\SOTI.CureWell.WebAPI.pdb
+C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\Microsoft.Owin.Cors.dll
+C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\Microsoft.Owin.dll
+C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\Microsoft.Owin.Security.dll
+C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\Owin.dll
+C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\Microsoft.Owin.xml
+C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\Microsoft.Owin.Cors.xml
+C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\Microsoft.Owin.Security.xml
+C:\Users\akssharma\OneDrive - SOTI Inc\CureWellProject2\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\Microsoft.Owin.Security.OAuth.xml

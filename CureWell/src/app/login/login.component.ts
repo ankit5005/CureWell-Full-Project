@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 
-import {FormControl,FormGroup,Validators} from '@angular/forms'
+import {AbstractControl, FormBuilder, FormControl,FormGroup,Validators} from '@angular/forms'
+import { AccountService } from '../services/account.service';
+import { Subscription } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 
  
 
@@ -15,39 +18,51 @@ import {FormControl,FormGroup,Validators} from '@angular/forms'
 })
 
 export class LoginComponent {
+  sub$?: Subscription;
+  statusCode?: Number;
+  loginForm!: FormGroup;
+  loggedIn:boolean=false;
+  constructor(private service: AccountService,private fb: FormBuilder,private route:Router) { }
 
  
 
-  loginForm=new FormGroup({
+  ngOnInit(): void {
+    if(this.service.isAuthenticated())
+    {
+      this.loggedIn=!this.loggedIn;
+      this.route.navigateByUrl("/home")
+    }
+    this.loginForm = this.fb.group({
+      emailId: [null, Validators.required],
+      password: [null, Validators.required]
+    })
+  }
 
-    id:new FormControl('',[Validators.required]),
+  get f(): { [controlName: string]: AbstractControl } {
+    return this.loginForm.controls;
+  }
 
-    password:new FormControl('',[Validators.required,Validators.minLength(5)])
-
-  })
+  ngOnDestroy(): void {
+    this.sub$?.unsubscribe();
+  }
 
   onSubmit() {
-
    {
-
-      console.warn(this.loginForm.value);
-
+    this.sub$ = this.service.login(this.f['emailId'].value, this.f['password'].value).subscribe({
+      next: (data) => {
+        console.log(data);
+        sessionStorage.setItem("token", data.access_token);
+        alert("User Logged In Successfully")
+        window.location.reload();
+        //this.route.navigate(["/home"]);
+      },
+      error: (err) => {
+        alert("Invalid Credentials")
+        console.error(err.status);
+        this.statusCode = err.status;
+      }
+    })
     }
-
- 
-
-  }
-
-  get id (){
-
-      return this.loginForm.get('id')
-
-  }
-
-  get password(){
-
-    return this.loginForm.get('password')
-
   }
 
 }

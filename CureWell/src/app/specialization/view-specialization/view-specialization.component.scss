@@ -1,6 +1,85 @@
  
 
 //View specialization section
+ 
+
+.section {
+
+    padding: 100px 0;
+
+}
+
+.bg-1 {
+
+    background: url(/src/assets/images/title-image.jpg) no-repeat 50% 50% !important;
+
+    background-size: cover;
+
+    position: relative;
+
+}
+
+ 
+
+.page-title {
+
+    padding: 120px 0px 70px 0px;
+
+    position: relative;
+
+}
+
+.overlay:before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    bottom: 0;
+
+    right: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    opacity: 0.9;
+
+    background: #223a66;
+
+}
+
+.text-white {
+
+    color: #fff !important;
+
+}
+
+.page-title .block h1 {
+
+    color: #fff !important;
+
+}
+
+ 
+
+.text-lg {
+
+    font-size: 50px;
+
+}
+
+.text-color{
+
+  color: #223a66 !important;
+
+  font-size: 44px !important;
+
+}
 
 .section-title {
 
@@ -138,7 +217,7 @@
 
 .btn1:hover {
 
-    background: linear-gradient(to right, #ff0000, #00ff00);
+    background: #e12454;
 
     border-color: transparent;
 

@@ -20,6 +20,7 @@ namespace SOTI.CureWell.WebAPI
             container.RegisterType<ISurgery, CureWellRepository>();
             container.RegisterType<ISpecialization, CureWellRepository>();
             container.RegisterType<IDoctorSpecialization, CureWellRepository>();
+            container.RegisterType<IUser, CureWellRepository>();
 
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);

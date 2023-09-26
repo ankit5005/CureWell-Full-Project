@@ -18,6 +18,44 @@ body {
     overflow-x: hidden !important;
 
 }
+.btn1 {
+
+    display: inline-block;
+
+    font-size: 14px !important;
+
+    font-size: 0.8125rem;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+    padding: 0.75rem 2rem;
+
+    font-family: "Exo", sans-serif;
+
+    text-transform: uppercase;
+
+    border-radius: 5px;
+
+    border: 2px solid transparent;
+
+    transition: all .35s ease;
+
+    text-decoration: none;
+
+}
+
+ 
+
+.btn1:hover {
+
+    background: #e12454;
+
+    border-color: transparent;
+
+}
+
 
  
 

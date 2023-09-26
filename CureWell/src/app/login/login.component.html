@@ -7,8 +7,8 @@
                 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                     <div class="">
                         <label for="id">Email/Id:</label>
-                        <input type="text" id="id" class="form-control" formControlName="id">
-                        <span *ngIf="id && id.invalid && id.touched" style="color: rgb(255, 44, 41);">
+                        <input type="text" id="id" class="form-control" formControlName="emailId">
+                        <span *ngIf="f['emailId'] && f['emailId'].invalid && f['emailId'].touched" style="color: rgb(255, 44, 41);">
                             *This Field is Required*
                         </span>
                     </div>
@@ -17,7 +17,7 @@
                         <input type="password" id="password" class="form-control" formControlName="password">
                     </div>
 
-                    <span *ngIf="password && password.invalid && password.touched" style="color: rgb(255, 44, 41);">
+                    <span *ngIf="f['password'] && f['password'].invalid && f['password'].touched" style="color: rgb(255, 44, 41);">
                         *Password Strength is weak *
                     </span>
                     <div>
