@@ -109,6 +109,29 @@ begin
   return 1
 end
 
+Drop table users
+CREATE TABLE Users(
+    UserID INT IDENTITY(100,1) CONSTRAINT pk_Users_UserId PRIMARY KEY,
+    UserName VARCHAR(255) NOT NULL,
+    EmailId VARCHAR(255) NOT NULL constraint unq_Users_EmailId Unique,
+    Age INT NOT NULL,
+    PhoneNumber VARCHAR(10) NOT NULL,
+    Address VARCHAR(255) constraint df_Users_Address Default(null),
+	Role varchar(25) constraint df_Users_Role Default('User'),
+	Password varchar(25) NOT NULL
+);
+
+ 
+
+select * from Users
+Alter proc usp_AddUser(@UserName varchar(255),@EmailId varchar(255),@Age int,@PhoneNumber varchar(10),@Address varchar(255),@Password varchar(25))
+as
+begin
+  Insert into Users(UserName,EmailId,Age,PhoneNumber,Address,Password) values(@UserName,@EmailId,@Age,@PhoneNumber,@Address,@Password)
+  return 1
+end
+
+
 Delete from Users
 Insert into Users(UserName,EmailId,Age,PhoneNumber,Password,Role) values('admin','admin@gmail.com',21,'8765432314','admin1234','Admin')
 Insert into Users(UserName,EmailId,Age,PhoneNumber,Password) values('Akshita','akshita@gmail.com',21,'7976456852','akshita123')
