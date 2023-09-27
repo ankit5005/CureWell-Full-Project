@@ -1,210 +1,39 @@
 <!--Page title section-->
-
- 
-
 <section class="page-title bg-1">
-
- 
-
     <div class="overlay"></div>
-
- 
-
     <div class="container">
-
- 
-
         <div class="row">
-
- 
-
             <div class="col-md-12" style="position: relative">
-
- 
-
                 <div class="block text-center">
-
- 
-
-                    <span class="text-white">All Doctors</span>
-
- 
-
                     <h1 class="text-capitalize mb-5 text-lg">Specialized Doctors</h1>
-
- 
-
                 </div>
-
- 
-
             </div>
-
- 
-
         </div>
-
- 
-
     </div>
-
- 
-
 </section>
 
- 
-
 <section class="section team">
-
- 
-
     <div class="container">
-
- 
-
       <div class="row justify-content-center">
-
- 
-
         <div class="col-lg-6">
-
- 
-
           <div class="section-title text-center">
-
- 
-
             <h2 class="mb-4">Meet Our Specialists</h2>
-
- 
-
             <div class="divider mx-auto my-4"></div>
-
-             
-
- 
-
+             <p>We have the best doctors from across the world, specialized in their respective fields.</p>
           </div>
-
- 
-
         </div>
-
- 
-
       </div>
-
       <div class="row justify-content-center">
-
         <div class="col-lg-4">
-
             <select name="" id="" class="form-control" [(ngModel)]="selectedSpec" (ngModelChange)="onChange($event)" name="specform">
-
- 
-
                 <option [value]="s.specializationCode"
-
-   
-
                  *ngFor="let s of specializations; let i = index;" [attr.disabled]="i == specializations.length-1 ? true : null"
-
-   
-
                  [attr.selected]="i == specializations.length-1 ? true : null">{{s.specializationName}}</option>
-
-   
-
-     
-
-   
-
             </select>
-
         </div>
-
-       
-
     </div>
-
- 
-
     </div>
-
- 
-
   </section>
-
-   
-
- 
-
-<!-- <div class="row mt-5">
-
-    <div class="col-lg-6 offset-3 drdiv">
-
-        <h2 class="drh2">Doctors</h2>
-
-        <br>
-
-        <div class="pinkline"></div>
-
-        <br>
-
-        <p>
-
-            We provide a wide range of
-
-            creative services adipisicing elit. Autem maxime rem modi eaque,
-
-            voluptate. Beatae officiis neque
-
-        </p>
-
-    </div>
-
-</div> -->
-
- 
-
-<!--
-
-<div class="row">
-
-    <div class="col-lg-4">
-
-        <select class="form-select depselect" [(ngModel)]="selectedSpec" (ngModelChange)="onChange($event)">
-
-            <option selected disabled>Select the specialization</option>
-
-            <option [value]="s.specializationCode" *ngFor="let s of specializations" >{{s.specializationName}}</option>
-
-        </select>
-
-    </div>
-
-   
-
-</div> -->
-
-<!-- <div class="row d-flex justify-content-evenly">
-
-    <div *ngFor="let d of doctorList" class="p-3 card col-lg-3 mx-2">
-
-            <img src="../../../assets/images/{{selectedSpec.toLowerCase()}}.jpg" alt="" class="card-img-top">
-
-        <div class="card-body">
-
-            <p>{{d.doctorName | titlecase}}</p>
-
-            <button class="btn btn-primary" *ngIf="role=='Admin'" (click)="editDoctorDetails(d.doctorId)">Edit Doctor Details</button>
-
-        </div>
-
-    </div>
-
-</div> -->
-
- 
 
 <section class="section service-2"style="padding: 5px 0;">
 
@@ -212,7 +41,7 @@
 
         <div class="row d-flex">
 
-            <div class="col-lg-4 col-md-6" *ngFor="let d of doctorList">
+            <div class="col-lg-3 col-md-6" *ngFor="let d of doctorList">
 
               <div class="department-block mb-5">
 
@@ -230,7 +59,7 @@
 
                   <p class="mb-4">
 
-                    Saepe nulla praesentium eaque omnis perferendis a doloremque.
+                    {{selectedSpec}}
 
                   </p>
 

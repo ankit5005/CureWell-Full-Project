@@ -49,8 +49,9 @@
 
     opacity: 0.9;
 
-    background: #223a66;
-
+    background:  linear-gradient(45deg,
+    #223a66,
+    rgba(8,83,156, 0.75)), url("../../../assets/images/first-aid-kit-1704526_1280.png") no-repeat 50% 50% !important;
 }
 
 .text-white {

@@ -1,8 +1,112 @@
+<!--Page title section-->
+
+
+
+<section class="page-title bg-1">
+
+
+
+  <div class="overlay"></div>
+
+
+
+  <div class="container">
+
+
+
+    <div class="row">
+
+
+
+      <div class="col-md-12" style="position: relative">
+
+
+
+        <div class="block text-center">
+
+
+
+          <span class="text-white"></span>
+
+
+
+          <h1 class="text-capitalize mb-5 text-lg">Today's Surgeries</h1>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+</section>
+
+
+
+<section class="section team">
+
+
+
+  <div class="container">
+
+
+
+    <div class="row justify-content-center">
+
+
+
+      <div class="col-lg-6">
+
+
+
+        <div class="section-title text-center">
+
+
+
+          <h2 class="mb-4">Filter by Specializations</h2>
+
+
+
+          <div class="divider mx-auto my-4"></div>
+
+
+
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-4">
+        <select name="" id="" class="form-control" [(ngModel)]="categoryFilter">
+          <option [value]="s.specializationCode"
+           *ngFor="let s of specializations; let i = index;" [attr.disabled]="i == specializations.length-1 ? true : null"
+           [attr.selected]="i == specializations.length-1 ? true : null">{{s.specializationName}}</option>
+      </select>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Display error message in the center if errorMsg is not null -->
 
 <div class="text-center mt-2">{{ errorMsg }}</div>
 
- 
+
 
 <!-- Display the main content if errorMsg is null -->
 
@@ -10,23 +114,16 @@
 
   <div class="col-md-10 mx-auto text-center">
 
-    <!-- Page heading -->
-
-    <h1 class="p-3 mb-2 text-color text-center">View Today's Surgery</h1>
-
- 
-
     <!-- Dropdown for filtering surgeries by category -->
-    <div class="row">
-        <div class="col-lg-4">
-            <select class="form-select depselect" [(ngModel)]="categoryFilter">
-                <option value="">No Filter</option>
-                <!-- <option [class.selected]="true" [disabled]="true">Select the specialization</option> -->
-                <option [value]="s.specializationCode" *ngFor="let s of specializations" >{{s.specializationCode}}</option>
-            </select>
-        </div>
-       
-    </div>
+    <!-- <div class="row">
+      <div class="col-lg-4">
+        <select class="form-select depselect" [(ngModel)]="categoryFilter">
+          <option value="">No Filter</option>
+          <option [value]="s.specializationCode" *ngFor="let s of specializations">{{s.specializationCode}}</option>
+        </select>
+      </div>
+
+    </div> -->
 
     <!-- <div class="form-group dropdown">
 
@@ -42,7 +139,7 @@
 
     </div> -->
 
- 
+
 
     <!-- List of surgeries -->
 
@@ -57,13 +154,7 @@
 
         <div class="surgery-band">
 
-          <div
-
-            class="surgery-category-band"
-
-            [style.backgroundColor]="getCategoryColor(s.surgeryCategory)"
-
-          >
+          <div class="surgery-category-band" [style.backgroundColor]="getCategoryColor(s.surgeryCategory)">
 
             {{ s.surgeryCategory }}
 
@@ -71,7 +162,7 @@
 
         </div>
 
- 
+
 
         <!-- Surgery details -->
 
@@ -81,13 +172,13 @@
 
           <div class="surgery-id">Surgery ID: {{ s.surgeryId }}</div>
 
- 
+
 
           <!-- Surgery date formatted as dd/MM/yyyy -->
 
           <div class="surgery-date">{{ s.surgeryDate | date : "dd/MM/yyyy" }}</div>
 
- 
+
 
           <!-- Start Time Label and Info on the same line -->
 
@@ -99,7 +190,7 @@
 
           </div>
 
- 
+
 
           <!-- End Time Label and Info on the same line -->
 
@@ -111,7 +202,7 @@
 
           </div>
 
- 
+
 
           <!-- Doctor ID -->
 
@@ -119,7 +210,7 @@
 
         </div>
 
- 
+
 
         <!-- Surgery actions, e.g., edit surgery time button -->
 

@@ -19,8 +19,13 @@ export class ViewDoctorComponent {
   errorMsg:string="";
   specializationCode:string="";
   specializations:Specialization[]=[];
-  selectedSpec:string="default";
+  selectedSpec:string="Doctor";
   role:string="";
+  specObject:object={
+    car:"Cardiologist",
+    ane:"Anesthesiologist",
+    gyn:"Gynecologist"
+  }
   constructor(private route:Router,private doctorService:DoctorService,
     private router:ActivatedRoute
     ,private specializationService:SpecializationService,
@@ -73,7 +78,7 @@ export class ViewDoctorComponent {
         console.log(data);
         this.specializations=data;
         let specialization=new Specialization();
-        specialization.specializationCode="def"
+        specialization.specializationCode="Doctor"
         specialization.specializationName="Select the specialization"
         this.specializations.push(specialization)
 

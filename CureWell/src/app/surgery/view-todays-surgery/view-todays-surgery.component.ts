@@ -64,6 +64,10 @@ getAllSpecialization()
     next:(data)=>{
       console.log(data);
       this.specializations=data;
+      let specialization=new Specialization();
+        specialization.specializationCode=""
+        specialization.specializationName="Select the specialization"
+        this.specializations.push(specialization)
     },
     error:(err)=>{
       console.error(err)

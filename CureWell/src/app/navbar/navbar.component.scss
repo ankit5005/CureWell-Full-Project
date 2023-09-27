@@ -1,12 +1,16 @@
-/* Navbar */
+/* Navbar Styles */
+
+ 
+
+/* Set the background color for the navbar */
 
 .navbar {
 
-  background-color: #223a66; /* Change the background color to a dark color */
+  background-color: #223a66; /* Dark blue background color */
 
-  padding: 20px 0;
+  padding: 5px 0;
 
-  opacity:0.9;
+  opacity: 0.9; /* Slight opacity for the navbar */
 
   border-bottom: 2px solid #2c3e50; /* Add a subtle border at the bottom */
 
@@ -14,27 +18,53 @@
 
  
 
-/* Navbar Brand */
+/* Custom Toggle Button Styles */
 
-.navbar-brand {
+ 
 
-  font-size: 36px;
+/* Customize the color of the toggle button */
 
-  color: #ecf0f1; /* White text color */
+.custom-toggler {
 
-  font-weight: bold;
+  color: white; /* Icon color */
 
-  font-family: "Arial", sans-serif;
+  background-color: white !important; /* Button background color */
+
+  border-color: white !important; /* Button border color (if needed) */
 
 }
 
  
 
-/* Icon */
+/* Navbar Brand Styles */
+
+ 
+
+/* Style the navbar brand (logo and text) */
+
+.navbar-brand {
+
+  font-size: 36px; /* Set the font size for the brand */
+
+  color: #ecf0f1; /* White text color for the brand */
+
+  font-weight: bold; /* Bold font weight */
+
+  font-family: "Arial", sans-serif; /* Font family */
+
+}
+
+ 
+
+/* Icon Styles */
+
+ 
+
+/* Style the icon with the ID 'icon1' */
 
 #icon1 {
 
-  font-size: 35px;
+  font-size: 35px; /* Set the font size for the icon */
 
   color: #ecf0f1; /* White color for the icon */
 
@@ -44,23 +74,29 @@
 
  
 
-/* Navbar Links */
+/* Navbar Links Styles */
+
+ 
+
+/* Style the navbar links */
 
 .navbar-nav .nav-link {
 
   color: #ecf0f1; /* White text color for links */
 
-  font-size: 22px;
+  font-size: 20px; /* Set the font size for links */
 
-  font-weight: bold;
+  font-weight: bold; /* Bold font weight */
 
-  margin-left: 30px; /* Adjust the spacing between links */
+  padding: 10px 20px; /* Adjust padding to control the space of each link */
 
-  transition: color 0.3s; /* Add smooth transition for color change */
+  transition: color 0.3s; /* Add a smooth transition for color change */
 
 }
 
  
+
+/* Hover effect for navbar links */
 
 .navbar-nav .nav-link:hover {
 
@@ -70,44 +106,62 @@
 
  
 
-.fa-user{
+/* User Icon Styles */
 
-  font-size:x-large;
+ 
 
-  margin-right: 25px;
+/* Style the user icon */
 
-  color: white;
+.fa-user {
 
-  transition: color 0.3s;
+  font-size: x-large; /* Set the font size for the user icon */
+
+  margin-right: 25px; /* Add margin to the right of the icon */
+
+  color: white; /* White color for the icon */
+
+  transition: color 0.3s; /* Add a smooth transition for color change */
 
 }
 
  
 
-.fa-user:hover{
+/* Hover effect for the user icon */
 
-  color: #e12454;
+.fa-user:hover {
+
+  color: #e12454; /* Change the icon color on hover */
 
 }
 
  
 
-/* Adjust margin between the navbar links and button */
+/* Navbar Navigation Styles */
+
+ 
+
+/* Adjust the margin between the navbar links and button */
 
 .navbar-nav {
 
-  margin-right: 20px;
+  display: flex; /* Display the navbar links as a flex container */
+
+  align-items: center; /* Align the items vertically */
+
+  margin-right: 0; /* Remove fixed margin to ensure proper alignment */
 
 }
 
  
 
-/* Center the button vertically */
+/* Center the button vertically within the navbar */
 
 .navbar-nav .btn-outline-success {
 
-  margin-top: auto;
+  margin-top: auto; /* Set top margin to auto to center vertically */
 
-  margin-bottom: auto;
+  margin-bottom: auto; /* Set bottom margin to auto to center vertically */
 
 }
+
+ 
