@@ -2,13 +2,14 @@
 
 <div class="row mt-3 mb-2 main">
   <!-- Left column for the form -->
-  <div class="col-md-5 offset-1">
-    <h2 class="mb-2 text-color text-center">Update Surgery</h2>
-    <div class="card">
+  <div class="col-md-6 offset-1 usdiv">
+    <div class="card usdiv2">
     
+      <h2 class="mb-2 text-color text-center">Update Surgery</h2>
 
       <div class="card-body" *ngIf="updateForm">
         <form action="" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+          <div class="d-flex detailsdiv">
           <div class="mb-3">
             <label class="col-form-label">Surgery Id</label>
 
@@ -20,7 +21,7 @@
             />
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3 mx-3">
             <label class="col-form-label">Doctor Id</label>
 
             <input
@@ -30,7 +31,8 @@
               readonly
             />
           </div>
-
+        </div>
+        <div class="d-flex detailsdiv">
           <div class="mb-3">
             <label class="col-form-label">Surgery Date</label>
 
@@ -42,7 +44,7 @@
             />
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3 mx-3">
             <label class="col-form-label">Start Time(24 hours Format)</label>
 
             <input
@@ -57,9 +59,7 @@
                   f['startTime'].errors
               }"
             />
-          </div>
-
-          <div
+            <div
             *ngIf="submitted || f['startTime'].touched || f['startTime'].dirty"
             class="text-danger small"
           >
@@ -78,7 +78,12 @@
               >Start Time should be less than End Time</span
             >
           </div>
+          </div>
+        </div>
+         
+         
 
+          <div class="d-flex detailsdiv">
           <div class="mb-3">
             <label class="col-form-label">End Time(24 Hours Format)</label>
 
@@ -92,9 +97,7 @@
                   f['endTime'].errors
               }"
             />
-          </div>
-
-          <div
+            <div
             *ngIf="
               (submitted || f['endTime'].touched || f['endTime'].dirty) &&
               f['endTime'].errors
@@ -116,8 +119,11 @@
               >End Time should be greater than End Time</span
             >
           </div>
+          </div>
 
-          <div class="mb-3">
+          
+
+          <div class="mb-3 mx-3">
             <label class="col-form-label">Surgery Category</label>
 
             <input
@@ -127,6 +133,7 @@
               readonly
             />
           </div>
+        </div>
 
           <div class="mt-2">
             <button class="btn1 btn-main btn-round-full" type="submit" [disabled]="isButtonDisabled">Update</button>
@@ -144,7 +151,7 @@
     </div>
   </div>
    <!-- Right column for the image -->
-   <div class="col-md-5 doctor-update-surgery">
+   <div class="col-md-4 doctor-update-surgery">
     <img src="../../../assets/images/update-surgery-right(2).png" alt="Doctor Updating Surgery" height="800px">
   </div>
 </div>

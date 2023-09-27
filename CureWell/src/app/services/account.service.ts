@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { User } from '../models/user';
+import { Appointment } from '../models/appointment';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +41,14 @@ export class AccountService {
       'Authorization':'Bearer ' + sessionStorage.getItem("token")
     })});
   }
+
+  getEmail():Observable<any>
+  {
+    return this.http.get(`${this.baseUrl}/api/Home/GetEmail`,{ headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization':'Bearer ' + sessionStorage.getItem("token")
+    })});
+  }
   logout(){
     sessionStorage.removeItem("token");
   }
@@ -48,5 +58,20 @@ export class AccountService {
       return true;
     }
     return false;
+  }
+
+
+  addUser(user:User): Observable<any> {
+    let headers=new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+    return this.http.post(`${this.baseUrl}/api/Home/AddUser`,user, { headers: headers });
+  }
+
+  addAppointment(appointment:Appointment): Observable<any> {
+    let headers=new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+    return this.http.post(`${this.baseUrl}/api/Home/AddAppointment`,appointment, { headers: headers });
   }
 }

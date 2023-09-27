@@ -14,7 +14,7 @@ namespace SOTI.CureWell.DAL
     /// <summary>
     /// Implements all the interfaces 
     /// </summary>
-    public class CureWellRepository:IDoctor,ISurgery,ISpecialization,IDoctorSpecialization,IUser
+    public class CureWellRepository:IDoctor,ISurgery,ISpecialization,IDoctorSpecialization,IUser,IBookAppointment
     {
         private SqlConnection _connection = null;
         private SqlDataAdapter _adapter = null;
@@ -506,6 +506,10 @@ namespace SOTI.CureWell.DAL
                     }
                 }
             }
+            catch (DBConcurrencyException ex)
+            {
+                Console.WriteLine(ex);
+            }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex);
@@ -589,6 +593,44 @@ namespace SOTI.CureWell.DAL
                     }
                 }
             });
+        }
+
+        public bool AddAppointment(BookAppointment bookAppointment)
+        {
+            try
+            {
+                using (_connection = new SqlConnection(SqlConnectionString.GetConnectionString))
+                {
+                    using (_adapter = new SqlDataAdapter("usp_BookAppointment", _connection))
+                    {
+                        _adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        _adapter.SelectCommand.Parameters.AddWithValue("@EmailId", bookAppointment.EmailId);
+                        _adapter.SelectCommand.Parameters.AddWithValue("@SpecializationCode", bookAppointment.SpecializationCode);
+                        _adapter.SelectCommand.Parameters.AddWithValue("@DoctorName", bookAppointment.DoctorName);
+                        _adapter.SelectCommand.Parameters.AddWithValue("@AppointmentDate", bookAppointment.AppointmentDate);
+                        _adapter.SelectCommand.Parameters.AddWithValue("@PatientName", bookAppointment.PatientName);
+                        _adapter.SelectCommand.Parameters.AddWithValue("@Description", bookAppointment.Description);
+                        using (_ds = new DataSet())
+                        {
+                            _adapter.Fill(_ds, "Appointment");
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (DBConcurrencyException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return false;
         }
     }
 }

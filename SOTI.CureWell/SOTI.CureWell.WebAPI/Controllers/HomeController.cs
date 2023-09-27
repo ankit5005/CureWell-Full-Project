@@ -25,6 +25,7 @@ namespace SOTI.CureWell.WebAPI.Controllers
         private readonly ISpecialization _specialization = null;
         private readonly IDoctorSpecialization _doctorSpecialization = null;
         private readonly IUser _user = null;
+        private readonly IBookAppointment _bookAppointment = null;
 
         /// <summary>
         /// Constructor to initialize the class variables
@@ -34,13 +35,14 @@ namespace SOTI.CureWell.WebAPI.Controllers
         /// <param name="specialization"></param>
         /// <param name="doctorSpecialization"></param>
         public HomeController(IDoctor doctor, ISurgery surgery, ISpecialization specialization, IDoctorSpecialization doctorSpecialization,
-            IUser user)
+            IUser user,IBookAppointment bookAppointment)
         {
             _surgery = surgery;
             _doctor = doctor;
             _specialization = specialization;
             _doctorSpecialization = doctorSpecialization;
             _user = user;
+            _bookAppointment = bookAppointment;
         }
 
         /// <summary>
@@ -132,7 +134,7 @@ namespace SOTI.CureWell.WebAPI.Controllers
         /// <summary>
         /// Controller to add a user
         /// </summary>
-        [HttpGet]
+        [HttpPost]
         [Route("AddUser")]
         public IHttpActionResult AddUser([FromBody] User user)
         {
@@ -241,6 +243,28 @@ namespace SOTI.CureWell.WebAPI.Controllers
             var identity = (ClaimsIdentity)HttpContext.Current.User.Identity;
             var role = identity.FindFirst(ClaimTypes.Role);
             return Ok(role.Value);
+        }
+
+        [Authorize]
+        [HttpGet]
+        [Route("GetEmail")]
+        public IHttpActionResult GetEmail()
+        {
+            var identity = (ClaimsIdentity)HttpContext.Current.User.Identity;
+            var role = identity.FindFirst(ClaimTypes.Email);
+            return Ok(role.Value);
+        }
+
+        [HttpPost]
+        [Route("AddAppointment")]
+        public IHttpActionResult AddAppointment([FromBody] BookAppointment bookAppointment)
+        {
+            var res = _bookAppointment.AddAppointment(bookAppointment);
+            if (res == true)
+            {
+                return Ok(true);
+            }
+            return BadRequest();
         }
     }
 

@@ -72,12 +72,16 @@ export class AddDoctorComponent {
     this.submitted=true;
     console.log(this.submitted);
     this.doctor.doctorName=this.registerForm.controls["doctorName"].value;
+    if(this.doctor.doctorName)
     this.sub$=this.doctorService.addDoctor(this.doctor).subscribe({
       next:(data)=>{
         if(data==true)
         {
           console.log("Doctor Added Successfully");
           window.alert("Doctor Added Successfully");
+          this.registerForm.reset();
+          this.router.navigateByUrl("/home");
+
         }
         else{
 
@@ -100,11 +104,15 @@ export class AddDoctorComponent {
     return this.registerForm.controls;
   }
 
+  get isButtonDisabled()
+  {
+    return (this.submitted || this.f['doctorName'].touched) && this.f['doctorName'].errors
+  }
   doReset(){
     this.submitted=false;
     this.registerForm.controls["doctorName"].setErrors(null);
     this.registerForm.controls["doctorName"].updateValueAndValidity();
-    window.location.reload();
+    this.router.navigateByUrl("/home");
   }
 
 }

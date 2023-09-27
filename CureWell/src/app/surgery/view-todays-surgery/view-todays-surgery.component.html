@@ -1,34 +1,142 @@
-<div class="text-center">{{ errorMsg }}</div>
-<div *ngIf="errorMsg == null" class="row mt-3 main">
-    <div class="col-md-10 mx-auto text-center">
-        <h1 class="p-3 mb-2 text-color text-center">View Today's Surgery</h1>
-        <div class="table-responsive">
-            <table class="table table-striped table-hover table-hover1 table-bordered">
-                <thead class="table-primary">
-                    <tr>
-                        <th scope="col">Surgery Id</th>
-                        <th scope="col">Doctor Id</th>
-                        <th scope="col">Surgery Date</th>
-                        <th scope="col">Start Time</th>
-                        <th scope="col">End Time</th>
-                        <th scope="col">Surgery Category</th>
-                        <th scope="col" *ngIf="role=='Admin'">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let s of surgeryList" [class.table-danger]="getSurgeryDate(s.surgeryDate) != getCurrentDate()">
-                        <td>{{ s.surgeryId }}</td>
-                        <td>{{ s.doctorId }}</td>
-                        <td>{{ s.surgeryDate | date: 'dd/MM/yyyy' }}</td>
-                        <td>{{ s.startTime }}</td>
-                        <td>{{ s.endTime }}</td>
-                        <td>{{ s.surgeryCategory }}</td>
-                        <td *ngIf="role=='Admin'">
-                            <div class="btn btn-color"  (click)="editSurgery(s.surgeryId)">Edit Surgery Time</div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+<!-- Display error message in the center if errorMsg is not null -->
+
+<div class="text-center mt-2">{{ errorMsg }}</div>
+
+ 
+
+<!-- Display the main content if errorMsg is null -->
+
+<div *ngIf="errorMsg == null" class="row mt-1 main">
+
+  <div class="col-md-10 mx-auto text-center">
+
+    <!-- Page heading -->
+
+    <h1 class="p-3 mb-2 text-color text-center">View Today's Surgery</h1>
+
+ 
+
+    <!-- Dropdown for filtering surgeries by category -->
+    <div class="row">
+        <div class="col-lg-4">
+            <select class="form-select depselect" [(ngModel)]="categoryFilter">
+                <option value="">No Filter</option>
+                <!-- <option [class.selected]="true" [disabled]="true">Select the specialization</option> -->
+                <option [value]="s.specializationCode" *ngFor="let s of specializations" >{{s.specializationCode}}</option>
+            </select>
         </div>
+       
     </div>
+
+    <!-- <div class="form-group dropdown">
+
+      <select [(ngModel)]="categoryFilter">
+
+        <option value="ANE">ANE</option>
+
+        <option value="CAR">CAR</option>
+
+        <option value="">No Filter</option>
+
+      </select>
+
+    </div> -->
+
+ 
+
+    <!-- List of surgeries -->
+
+    <div class="surgery-list">
+
+      <!-- Iterate over surgery items -->
+      <p *ngIf="filteredSurgeryList.length==0">No Surgery scheduled for {{categoryFilter}}</p>
+
+      <div class="surgery-item" *ngFor="let s of filteredSurgeryList">
+
+        <!-- Surgery category band with dynamic background color -->
+
+        <div class="surgery-band">
+
+          <div
+
+            class="surgery-category-band"
+
+            [style.backgroundColor]="getCategoryColor(s.surgeryCategory)"
+
+          >
+
+            {{ s.surgeryCategory }}
+
+          </div>
+
+        </div>
+
+ 
+
+        <!-- Surgery details -->
+
+        <div class="surgery-details">
+
+          <!-- Surgery ID -->
+
+          <div class="surgery-id">Surgery ID: {{ s.surgeryId }}</div>
+
+ 
+
+          <!-- Surgery date formatted as dd/MM/yyyy -->
+
+          <div class="surgery-date">{{ s.surgeryDate | date : "dd/MM/yyyy" }}</div>
+
+ 
+
+          <!-- Start Time Label and Info on the same line -->
+
+          <div class="label-info">
+
+            <div class="label">Start Time:</div>
+
+            <div class="info">{{ s.startTime }}</div>
+
+          </div>
+
+ 
+
+          <!-- End Time Label and Info on the same line -->
+
+          <div class="label-info">
+
+            <div class="label">End Time:</div>
+
+            <div class="info">{{ s.endTime }}</div>
+
+          </div>
+
+ 
+
+          <!-- Doctor ID -->
+
+          <div class="surgery-doctor">Doctor ID: {{ s.doctorId }}</div>
+
+        </div>
+
+ 
+
+        <!-- Surgery actions, e.g., edit surgery time button -->
+
+        <div class="surgery-actions">
+
+          <div class="btn btn-color" (click)="editSurgery(s.surgeryId)" *ngIf="role=='Admin'">
+
+            Edit Surgery Time
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </div>

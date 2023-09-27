@@ -1,105 +1,487 @@
+//View doctor section
+
+ 
+
+ 
+
 .section {
+
+ 
 
     padding: 100px 0;
 
+ 
+
 }
+
+ 
 
 .bg-1 {
 
-    background: url(/src/assets/images/pexels-charlss-gonzhu-15277956.jpg) no-repeat 50% 50% !important;
+ 
+
+    background: url(/src/assets/images/title-image.jpg) no-repeat 50% 50% !important;
+
+ 
 
     background-size: cover;
 
+ 
+
     position: relative;
 
+ 
+
 }
+
+ 
+
+ 
 
  
 
 .page-title {
 
+ 
+
     padding: 120px 0px 70px 0px;
+
+ 
 
     position: relative;
 
-}
-
-.overlay:before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-
-    top: 0;
-
-    bottom: 0;
-
-    right: 0;
-
-    width: 100%;
-
-    height: 100%;
-
-    opacity: 0.9;
-
-    background: #223a66;
-
-}
-
-.text-white {
-
-    color: #fff !important;
-
-}
-
-.page-title .block h1 {
-
-    color: #fff !important;
+ 
 
 }
 
  
 
+.overlay:before {
+
+ 
+
+    content: "";
+
+ 
+
+    position: absolute;
+
+ 
+
+    left: 0;
+
+ 
+
+    top: 0;
+
+ 
+
+    bottom: 0;
+
+ 
+
+    right: 0;
+
+ 
+
+    width: 100%;
+
+ 
+
+    height: 100%;
+
+ 
+
+    opacity: 0.9;
+
+ 
+
+    background: #223a66;
+
+ 
+
+}
+
+ 
+
+.text-white {
+
+ 
+
+    color: #fff !important;
+
+ 
+
+}
+
+ 
+
+.page-title .block h1 {
+
+ 
+
+    color: #fff !important;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
 .text-lg {
+
+ 
 
     font-size: 50px;
 
+ 
+
 }
+
+ 
 
 .text-color{
 
+ 
+
   color: #223a66 !important;
+
+ 
 
   font-size: 44px !important;
 
-}
-.pinkline{
-    width: 50px;
-    height: 10px;
-    background-color: #e12454;
-}
-.drdiv{
-    text-align:center;
-    display: flex !important;
-    align-items: center;
-    justify-content: center !important;
-    flex-direction: column !important;
+ 
+
 }
 
-.drh2{
-    font-size: 35px;
-    color: #223a66;
+ 
+
+.section-title {
+
+ 
+
+    margin-bottom: 70px;
+
+ 
+
 }
-.depselect{
+
+ 
+
+.section-title h2 {
+
+ 
+
     color: #223a66;
-    padding: 10px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: linear-gradient(to right,#e12454,pink);
-    border-radius: 20px;
-    // background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%2326749a'><polygon points='0,0 100,0 50,50'/></svg>")
-    //   no-repeat;
-    // background-color: #ccc;
+
+ 
+
+}
+
+ 
+
+.divider {
+
+ 
+
+    width: 40px;
+
+ 
+
+    height: 5px;
+
+ 
+
+    background: #e12454;
+
+ 
+
+}
+
+.main-image{
+
+    height: 400px;
+
+}
+
+.main-image{
+
+ 
+
+    transition: transform 0.5s ease-in-out;
+
+ 
+
+}
+
+ 
+
+.main-image:hover {
+
+ 
+
+   
+
+ 
+
+   
+
+ 
+
+    transform: scale(1.1, 1.1);
+
+ 
+
+   
+
+ 
+
+        /* Example transition with a 0.5s duration */
+
+ 
+
+    /* Scale horizontally by 1.2 and vertically by 0.8 */
+
+ 
+
+}
+
+ 
+
+.content h4:hover{
+
+ 
+
+    font-size: 40px;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.content h4 {
+
+ 
+
+    transition: font-size 0.5s ease-in-out;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.btn-grad {
+
+ 
+
+    background-image: linear-gradient(to left, #d42b11 0%, #223a66 100%, #7aa14b 100%);
+
+ 
+
+    margin: 10px;
+
+ 
+
+    padding: 15px 45px;
+
+ 
+
+    text-align: center;
+
+ 
+
+    text-transform: uppercase;
+
+ 
+
+    transition: 0.5s;
+
+ 
+
+    background-size: 200% auto;
+
+ 
+
+    color: white;
+
+ 
+
+    box-shadow: 0 0 20px #eee;
+
+ 
+
+    border-radius: 10px;
+
+ 
+
+    display: block;
+
+ 
+
+    text-decoration: none;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.btn-grad:hover {
+
+ 
+
+    background-position: center;
+
+ 
+
+    /* change the direction of the change here */
+
+ 
+
+    color: #fff;
+
+ 
+
+    text-decoration: none;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.btn1 {
+
+ 
+
+    display: inline-block;
+
+ 
+
+    font-size: 14px !important;
+
+ 
+
+    font-size: 0.8125rem;
+
+ 
+
+    font-weight: 700;
+
+ 
+
+    letter-spacing: .5px;
+
+ 
+
+    padding: 0.75rem 2rem;
+
+ 
+
+    font-family: "Exo", sans-serif;
+
+ 
+
+    text-transform: uppercase;
+
+ 
+
+    border-radius: 5px;
+
+ 
+
+    border: 2px solid transparent;
+
+ 
+
+    transition: all .35s ease;
+
+ 
+
+    text-decoration: none;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.btn1:hover {
+
+ 
+
+    background: #e12454;
+
+ 
+
+    border-color: transparent;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.btn-round-full {
+
+ 
+
+    border-radius: 50px;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.btn-main {
+
+ 
+
+    background: #223a66;
+
+ 
+
+    color: #fff;
+
+ 
+
+    border-color: #223a66;
+
+ 
+
 }

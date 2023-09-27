@@ -46,9 +46,12 @@ export class ViewDoctorComponent {
   }
   getDoctorBySpecialization(specializationCode:string)
   {
+    if(specializationCode=="")
+    {
+      return this.doctorList;
+    }
     this.sub$=this.doctorService.getDoctorsBySpecialization(specializationCode).subscribe({
       next:(data)=>{
-        console.log(data);
         this.doctorList=data;
       },
       error:(err)=>{
@@ -56,6 +59,7 @@ export class ViewDoctorComponent {
         this.errorMsg="Some error occured";
       }
      })
+     return this.doctorList;
   }
   onChange(event:string)
   {
@@ -68,6 +72,11 @@ export class ViewDoctorComponent {
       next:(data)=>{
         console.log(data);
         this.specializations=data;
+        let specialization=new Specialization();
+        specialization.specializationCode="def"
+        specialization.specializationName="Select the specialization"
+        this.specializations.push(specialization)
+
       },
       error:(err)=>{
         console.error(err)
@@ -75,6 +84,10 @@ export class ViewDoctorComponent {
       }
      })
   }
+
+  // get filteredDoctorList(): Doctor[] {
+  //   return this.getDoctorBySpecialization(this.selectedSpec)
+  // }
 
   ngOnInit()
   {

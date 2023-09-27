@@ -17,6 +17,10 @@ p {
     color: #6F8BA4 !important;
 
 }
+.homemaindiv2{
+    display:flex;
+    justify-content:center;
+}
 
 h4, .h4 {
 
@@ -117,9 +121,6 @@ h6,.h6 {
     font-size: 18px;
     background-image: url("../../assets/images/pexels-gustavo-fring-8770713.jpg");
     background-size: cover;
-   // background-position-x: left ;
-   // background-position-y: top;
-    //background-position: center;
 }
 .homediv2{
     box-shadow: 1px 1px 5px #888888;
@@ -128,7 +129,6 @@ h6,.h6 {
     margin-top: -50px;
     margin-left: 40px;
     background-color: white;
-    //box-shadow: 2px 2px 2px solid rgba(0,0,0,0.2);
 }
 .homediv2 h4{
     color: #223A66 !important;
@@ -413,4 +413,24 @@ h6,.h6 {
 
     border-color: transparent;
 
+}
+
+@media(max-width:700px)
+{
+    .homeimgdiv{
+
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    } 
+    .homemaindiv2{
+        flex-direction: column;
+    } 
+    .homediv2{
+        margin-top: 10px;
+        margin-left: 5px;
+    }
+    .btn1{
+        width: fit-content;
+        text-align: center;
+    }
 }

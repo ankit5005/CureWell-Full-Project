@@ -1,74 +1,40 @@
 <!-- Appointment section starts -->
+
 <!--Page title section-->
-
 <section class="page-title bg-1">
-
-    <div class="overlay"></div>
-  
-    <div class="container">
-  
-      <div class="row">
-  
-        <div class="col-md-12" style="position: relative">
-  
-          <div class="block text-center">
-  
-            <span class="text-white">Book your</span>
-  
-            <h1 class="text-capitalize mb-5 text-lg">Appoinment</h1>
-  
-          </div>
-  
-        </div>
-  
-      </div>
-  
-    </div>
-  
-  </section>
-  
-   
-<section class="appointment section">
-
+  <div class="overlay"></div>
   <div class="container">
-
     <div class="row">
-
-      <div class="col-lg-4">
-
-        <div class="mt-3">
-
-          <div class="feature-icon mb-3">
-
-            <i class="fa-solid fa-headset fa-beat text-lg"></i>
-
-          </div>
-
-          <span class="h3">Call for an Emergency Service! </span>
-
-          <h2 class="text-color mt-3">+84 789 1256</h2>
-
+      <div class="col-md-12" style="position: relative">
+        <div class="block text-center">
+          <span class="text-white">Book your</span>
+          <h1 class="text-capitalize mb-5 text-lg">Appoinment</h1>
         </div>
-
       </div>
-
+    </div>
+  </div>
+</section>
+<section class="appointment section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="mt-3">
+          <div class="feature-icon mb-3">
+            <i class="fa-solid fa-headset fa-beat text-lg"></i>
+          </div>
+          <span class="h3">Call for an Emergency Service! </span>
+          <h2 class="text-color mt-3">+84 789 1256</h2>
+        </div>
+      </div>
       <div class="col-lg-8">
-
         <div class="appointment-wrap mt-5 mt-lg-0 pl-lg-5">
-
           <h2 class="mb-2 text-color">Book an appointment</h2>
-
           <p class="mb-4">
-
             Mollitia dicta commodi est recusandae iste, natus eum asperiores
-
             corrupti qui velit . Iste dolorum atque similique praesentium
-
             soluta.
-
           </p>
-
-          <form action="" class="appointment-form">
+          <form action="" class="appointment-form" [formGroup]="appointmentForm" (ngSubmit)="onSubmit()" >
 
             <div class="row">
 
@@ -76,160 +42,75 @@
 
                 <div class="form-group mb-3">
 
-                  <select name="" id="" class="form-control">
-
-                    <option value="">Select Department</option>
-
-                    <option value="">GNM</option>
-
+                  <select name="" id="" class="form-control" [(ngModel)]="selectedSpec"
+                    (ngModelChange)="onChange($event)" name="specform" 
+                     formControlName="specializationCode"
+                     [ngClass]="{error:(submitted || f['specializationCode'].touched) && f['specializationCode'].errors}">
+                    <option [value]="s.specializationCode" *ngFor="let s of specializations; let i = index;"
+                      [attr.disabled]="i == specializations.length-1 ? true : null"
+                      [attr.selected]="i == specializations.length-1 ? true : null">{{s.specializationName}}</option>
                   </select>
-
+                  <div *ngIf="(submitted || f['specializationCode'].touched) && f['specializationCode'].errors" class="text-danger small">
+                    <span *ngIf="f['specializationCode'].errors?.['required']">specialization Name is required</span>
                 </div>
-
+                </div>
               </div>
-
               <div class="col-lg-6">
-
                 <div class="form-group mb-3">
-
-                  <select name="" id="" class="form-control">
-
+                  <select name="" id="" class="form-control"
+                    formControlName="doctorName"
+                    [ngClass]="{error:(submitted || f['doctorName'].touched) && f['doctorName'].errors}">
                     Choose Doctor
-
                     <option value="">Select Doctor</option>
-
-                    <option value="">GNM</option>
-
+                    <option [value]="d.doctorName" *ngFor="let d of doctorList">{{d.doctorName}}</option>
                   </select>
-
+                  <div *ngIf="(submitted || f['doctorName'].touched) && f['doctorName'].errors" class="text-danger small">
+                    <span *ngIf="f['doctorName'].errors?.['required']">Doctor Name is required</span>
                 </div>
-
+                </div>
               </div>
-
               <div class="col-lg-6">
-
                 <div class="form-group mb-3">
+                  <input class="form-control" type="date" name="" id="" placeholder="dd/mm/yy"  
+                   formControlName="date"
+                   [ngClass]="{error:(submitted || f['date'].touched) && f['date'].errors}"/>
 
-                  <input
-
-                    class="form-control"
-
-                    type="date"
-
-                    name=""
-
-                    id=""
-
-                    placeholder="dd/mm/yy"
-
-                  />
-
+                   
+                   <div *ngIf="(submitted || f['date'].touched) && f['date'].errors" class="text-danger small">
+                    <span *ngIf="f['date'].errors?.['required']">Date is required</span>
                 </div>
-
+                </div>
               </div>
-
               <div class="col-lg-6">
-
                 <div class="form-group mb-3">
-
-                  <input
-
-                    name="time"
-
-                    id="time"
-
-                    type="text"
-
-                    class="form-control"
-
-                    placeholder="Time"
-
-                  />
-
+                  <input name="PatientName" id="name" type="text" class="form-control"
+                  formControlName="patientName"
+                  placeholder="Patient Name" 
+                  [ngClass]="{error:(submitted || f['patientName'].touched) && f['patientName'].errors}"/>
+                  
+                  
+                  <div *ngIf="(submitted || f['patientName'].touched) && f['patientName'].errors" class="text-danger small">
+                    <span *ngIf="f['patientName'].errors?.['required']">Patient name is required</span>
                 </div>
-
-              </div>
-
-              <div class="col-lg-6">
-
-                <div class="form-group mb-3">
-
-                  <input
-
-                    name="PatientName"
-
-                    id="name"
-
-                    type="text"
-
-                    class="form-control"
-
-                    placeholder="Patient Name"
-
-                  />
-
+                
                 </div>
-
               </div>
-
-              <div class="col-lg-6">
-
-                <div class="form-group mb-3">
-
-                  <input
-
-                    name="phone"
-
-                    id="phone"
-
-                    type="number"
-
-                    class="form-control"
-
-                    placeholder="Phone Number"
-
-                  />
-
-                </div>
-
-              </div>
-
             </div>
-
             <div class="form-group-2 mb-4">
-
-              <textarea
-
-                name="message"
-
-                id="message"
-
-                class="form-control"
-
-                rows="6"
-
-                placeholder="Your Message"
-
-              ></textarea>
-
+              <textarea name="message" id="message" class="form-control" 
+              rows="6" placeholder="Your Message"  formControlName="message"
+              [ngClass]="{error:(submitted || f['message'].touched) && f['message'].errors}"></textarea>
+              
+              <div *ngIf="(submitted || f['message'].touched) && f['message'].errors" class="text-danger small">
+                <span *ngIf="f['message'].errors?.['required']">Message is required</span>
             </div>
-
-            <a class="btn1 btn-main btn-round-full" href="confirmation.html"
-
-              >Make Appoinment <i class="fa-solid fa-angle-right fa-beat"></i
-
-            ></a>
-
+            
+            </div>
+            <button class="btn1 btn-main btn-round-full" type="submit" [disabled]="isButtonDisabled">Make Appoinment <i
+                class="fa-solid fa-angle-right fa-beat"></i></button>
           </form>
-
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
-
- 

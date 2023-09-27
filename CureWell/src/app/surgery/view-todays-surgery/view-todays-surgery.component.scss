@@ -1,38 +1,289 @@
+/* view-surgery.component.scss */
 
-.text-color {
-    color: #e12454 !important;
-    font-size: 44px !important;
-  }
+.main{
 
-  .btn-color{
-    color: #e12454;
-    border-radius: 20px;
-  }
-  
-  .btn-color:hover{
-    color:white;
-    background: linear-gradient(to right, #df2b58, #da4c6f, #df7a93);
-  }
+  background-image: url(../../../assets/images/view-surgery-background.jpg);
 
-  .main{
-    background-image: url(../../../assets/images/view-surgery-background.jpg);
-  }
+  background-size:fill;
 
-  /* Add this CSS for table header styling */
-.table thead th {
-    background-color: #223a66; /* Background color for table header cells */
-    color: white; /* Text color for table header cells */
-    font-weight: bold; /* Bold text for table header cells */
-    text-align: center; /* Center-align text in table header cells */
-    border-color: #e12454; /* Border color for table header cells */
-    padding: 10px; /* Padding for table header cells */
+  background-repeat: no-repeat;
+
 }
 
-/* Add this CSS to style table rows on hover */
-.table-hover {
-    background-color: #ce254d !important; /* Background color for rows on hover */
+/* Style for the heading */
+
+h1.text-color {
+
+  font-size: 24px; /* Adjust the font size as needed */
+
+  color: #333; /* Change the text color as needed */
+
+  padding: 20px; /* Adjust the padding as needed */
+
+  margin-bottom: 10px; /* Adjust the margin as needed */
+
+  text-align: center;
+
+  background-color: #f7f7f7; /* Background color for the heading */
+
+  border: 1px solid #ccc; /* Border for the heading */
+
+  border-radius: 5px; /* Border radius for rounded corners */
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a box shadow */
+
 }
 
-.table-hover1 tr,td :hover  {
-    background-color: #ce254d !important; /* Background color for rows on hover */
+ 
+
+ 
+
+.surgery-category-band {
+
+  background-color: #3498db;
+
+  color: white;
+
+  font-weight: bold;
+
+  padding: 5px 10px;
+
+  border-top-left-radius: 5px;
+
+  border-top-right-radius: 5px;
+
+}
+
+ 
+
+.surgery-list {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+
+}
+
+ 
+
+.surgery-item {
+
+  background-color: #f7f7f7;
+
+  border: 1px solid #ccc;
+
+  border-radius: 5px;
+
+  padding: 15px;
+
+  margin: 10px;
+
+  width: calc(33.33% - 20px); /* Adjust the width as needed */
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+  transition: transform 0.2s ease-in-out;
+
+  opacity: 0.95;
+
+}
+
+ 
+
+.surgery-item:hover {
+
+  transform: scale(1.05); /* Increase size on hover */
+
+}
+
+ 
+
+.surgery-details {
+
+  font-size: 16px;
+
+}
+
+ 
+
+.surgery-id {
+
+  color: #333;
+
+}
+
+ 
+
+.surgery-date {
+
+  margin-top: 5px;
+
+}
+
+ 
+
+.surgery-time {
+
+  font-style: italic;
+
+  margin-top: 5px;
+
+}
+
+ 
+
+.surgery-doctor {
+
+  margin-top: 10px;
+
+}
+
+ 
+
+.surgery-actions {
+
+  text-align: center;
+
+  margin-top: 10px;
+
+}
+
+ 
+
+ 
+
+ 
+
+.btn-color {
+
+  background-color: #223a66;
+
+  color: white;
+
+  padding: 10px 15px;
+
+  border-radius: 30px;
+
+  cursor: pointer;
+
+}
+
+ 
+
+.btn-color:hover {
+
+  background: linear-gradient(to right, #df2b58, #da4c6f, #df7a93);
+
+}
+
+ 
+
+/* Style for label and info on the same line */
+
+.label-info {
+
+  display: inline-block;
+
+  margin-right: 10px; /* Adjust as needed for spacing */
+
+}
+
+ 
+
+.label {
+
+  font-weight: bold;
+
+  margin-right: 5px; /* Adjust as needed for spacing */
+
+}
+
+ 
+
+.info {
+
+  display: inline;
+
+}
+
+ 
+
+/* Style for the dropdown container */
+
+.form-group.dropdown {
+
+  position: relative;
+
+  display: inline-block;
+
+}
+
+ 
+
+/* Style for the select element */
+
+.form-group.dropdown select {
+
+  width: 200px; /* Adjust the width as needed */
+
+  padding: 10px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 5px;
+
+  background-color: #fff;
+
+  font-size: 16px;
+
+  appearance: none; /* Remove default arrow */
+
+  outline: none; /* Remove focus outline */
+
+  cursor: pointer;
+
+}
+
+ 
+
+/* Style for select options */
+
+.form-group.dropdown select option {
+
+  padding: 5px;
+
+  font-size: 14px;
+
+  background-color: #ddd7d9;
+
+  color: #333;
+
+}
+
+ 
+
+/* Style for the selected option */
+
+.form-group.dropdown select option:checked {
+
+  background-color: #223a66;
+
+  color: white;
+
+  font-weight: bold;
+
+}
+
+ 
+
+/* Add a border on focus */
+
+.form-group.dropdown select:focus {
+
+  border-color: #3498db;
+
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+
 }

@@ -1,21 +1,53 @@
 .LoginF {
-   // width: 27rem;
-   height: 100%;
     padding: 50px;
-    padding-bottom: 20%;
+    background:#384D75;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+//    align-items: center;
+    // padding: 50px;
+    // padding-bottom: 20%;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    color: white;
 }
-
+h2.loginh2{
+    margin-top: 30px;
+    // color: #0056b3;
+    color: white !important;
+}
+.logdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 button:hover {
     background-color: #0056b3;
 }
-
+.userprofile{
+    font-size: 80px;
+    text-align: center;
+}
 section {
     min-height: 90vh;
     background-size: cover;
     background-repeat: no-repeat;
+}
+.loginformdiv label{
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+
+}
+.loginbtn{
+    width: 120px;
+    height: 30px;
+    line-height: 15px;
+    background-color:#e12454;
+    color: white;
+    border-radius: 10px;
+}
+.signuplink{
+    color: white;
 }
 
 .formInCenter {
