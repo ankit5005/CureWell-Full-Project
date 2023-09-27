@@ -10,7 +10,7 @@
                         <label for="id">Email/Id:</label>
                         <input type="text" id="id" class="form-control" formControlName="emailId">
                         <span *ngIf="f['emailId'] && f['emailId'].invalid && f['emailId'].touched" style="color: rgb(255, 44, 41);">
-                            *This Field is Required*
+                            *Email is Required*
                         </span>
                     </div>
                     <br>
@@ -20,7 +20,7 @@
                     </div>
 
                     <span *ngIf="f['password'] && f['password'].invalid && f['password'].touched" style="color: rgb(255, 44, 41);">
-                        *Password Strength is weak *
+                        *Password is required *
                     </span>
                     <div>
                         <br>

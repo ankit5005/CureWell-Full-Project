@@ -766,3 +766,16 @@ h1.text-color {
   box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 
 }
+
+@media(max-width:800px)
+{
+  .surgery-list{
+    flex-direction: column;
+  }
+  .surgery-item{
+    flex: 1;
+    min-width: 300px;
+    width: 100%;
+  }
+
+}

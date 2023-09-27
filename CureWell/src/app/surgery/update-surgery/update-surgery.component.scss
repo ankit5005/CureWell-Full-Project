@@ -193,6 +193,7 @@ label {
     padding: 0px !important;
     offset:0 !important;
     justify-content: space-between !important;
+   
   }
   .detailsdiv div{ 
    flex:1
@@ -222,5 +223,23 @@ label {
   }
   .text-color{
     font-size:30px !important;
+  }
+}
+@media(max-width:800px){
+  .main{
+    display: flex;
+    flex-direction: column !important;
+  }
+  .usdiv{
+    flex: 1 !important;
+  }
+  .doctor-update-surgery{
+    flex: 1 !important;
+  }
+  .detailsdiv{
+    flex-direction: column;
+  }
+  .detailsdiv div{
+    margin: 0px !important;
   }
 }
