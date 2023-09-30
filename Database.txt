@@ -1,0 +1,153 @@
+Use CureWell
+
+Create Table Doctor(DoctorId int identity(1001,1) constraint pk_Doctor_DoctorId primary key
+,DoctorName varchar(25) not null)
+
+Insert into Doctor(DoctorName) values('Albert'),('Olivia'),('Susan')
+
+
+CREATE TABLE Specialization(
+	SpecializationCode Char(3) constraint pk_Specialization_SpecializationCode PRIMARY KEY,
+	SpecializationName Varchar(20) NOT NULL
+);
+
+--Insertion of Sample Data
+INSERT INTO Specialization (SpecializationCode,SpecializationName)
+		VALUES('GYN','Gynecologist'),
+			  ('CAR','Cardiologist'),
+			  ('ANE','Anesthesiologist');
+
+
+CREATE TABLE DoctorSpecialization(
+	DoctorId INT CONSTRAINT fk_DoctorSpecialization_Doctor_DoctorId foreign Key references Doctor(DoctorId),
+	SpecializationCode Char(3) CONSTRAINT fk_DoctorSpecialization_Specialization_SpecializationCode foreign Key references Specialization(SpecializationCode),
+	SpecializationDate DATE NOT NULL,
+	Constraint ck_DoctorSpecialization_DoctorId_SpecializationCode PRIMARY KEY (DoctorId,SpecializationCode)
+)
+INSERT INTO DoctorSpecialization(DoctorId,
+SpecializationCode,SpecializationDate) Values(1001,'ANE','2010-01-01'),
+(1002,'CAR','2010-01-01'),(1003,'CAR','2010-01-01')
+
+create table Surgery(
+SurgeryId int identity(5000,1) constraint pk_Surgery_SurgeryId primary Key,
+DoctorId int constraint fk_Surgery_Doctor_DoctorId foreign Key references Doctor(DoctorId),
+SurgeryDate Date not null,
+StartTime Decimal(4,2) not null,
+EndTime Decimal(4,2) not null,
+SurgeryCategory char(3) constraint fk_Surgery_Specialization_SurgeryCategory foreign Key references Specialization(SpecializationCode)
+)
+
+Insert into Surgery(DoctorId,SurgeryDate,StartTime,EndTime,SurgeryCategory) values (1001,'2011-01-01',09.00,14.00,'ANE'),
+(1002,'2015-01-01',10.00,16.00,'CAR')
+
+Create proc usp_AddDoctor(@DoctorName varchar(25))
+as
+begin
+  Insert into Doctor(DoctorName) values(@DoctorName)
+  return 1
+end
+
+
+Create proc usp_DeleteDoctor(@DoctorId int)
+as
+if(not exists(Select 'a' from Doctor where DoctorId=@DoctorId))
+   return -1
+else
+ begin
+  Delete from Doctor where DoctorId=@DoctorId
+  return 1
+ end
+
+CREATE PROCEDURE usp_GetAllSpecialization
+AS
+BEGIN
+	SELECT * FROM Specialization;
+END
+
+Create proc usp_UpdateDoctorDetails(@DoctorId int,@DoctorName varchar(25))
+as
+if(not exists(Select 'a' from Doctor where DoctorId=@DoctorId))
+   return -1
+else
+ begin
+  Update Doctor set DoctorName=@DoctorName where DoctorId=@DoctorId
+  return 1
+ end
+
+Create proc usp_UpdateSurgery(@SurgeryId int,@DoctorId int,@SurgeryDate Date,@StartTime Decimal(4,2),
+@EndTime Decimal(4,2),
+@SurgeryCategory Char(3))
+as
+if(not exists(Select 'a' from Surgery where SurgeryId=@SurgeryId))
+   return -1
+else if(not exists(Select 'a' from Doctor where DoctorId=@DoctorId))
+   return -1
+else
+ begin
+  Update Surgery set DoctorId=@DoctorId,SurgeryDate=@SurgeryDate,StartTime=@StartTime,
+  EndTime=@EndTime,SurgeryCategory=@SurgeryCategory where SurgeryId=@SurgeryId
+  return 1
+ end
+
+
+Create Proc usp_DoctorsBySpecialization (@specializationCode char(3))
+as
+Begin
+	Select d.DoctorId as DoctorId, d.DoctorName as DoctorName from Doctor d  
+	JOIN DoctorSpecialization ds ON  d.DoctorId = ds.DoctorId  and ds.SpecializationCode=@specializationCode
+end
+
+ALTER proc [dbo].[usp_UpdateSurgery](@SurgeryId int, @StartTime Decimal(4,2),
+@EndTime Decimal(4,2))
+as
+if(not exists(Select 'a' from Surgery where SurgeryId=@SurgeryId))
+   return -1
+else
+begin
+  Update Surgery set StartTime=@StartTime,
+  EndTime=@EndTime where SurgeryId=@SurgeryId
+  return 1
+end
+
+Drop table users
+CREATE TABLE Users(
+    UserID INT IDENTITY(100,1) CONSTRAINT pk_Users_UserId PRIMARY KEY,
+    UserName VARCHAR(255) NOT NULL,
+    EmailId VARCHAR(255) NOT NULL constraint unq_Users_EmailId Unique,
+    Age INT NOT NULL,
+    PhoneNumber VARCHAR(10) NOT NULL,
+    Address VARCHAR(255) constraint df_Users_Address Default(null),
+	Role varchar(25) constraint df_Users_Role Default('User'),
+	Password varchar(25) NOT NULL
+);
+
+ 
+
+select * from Users
+Alter proc usp_AddUser(@UserName varchar(255),@EmailId varchar(255),@Age int,@PhoneNumber varchar(10),@Address varchar(255),@Password varchar(25))
+as
+begin
+  Insert into Users(UserName,EmailId,Age,PhoneNumber,Address,Password) values(@UserName,@EmailId,@Age,@PhoneNumber,@Address,@Password)
+  return 1
+end
+
+
+Delete from Users
+Insert into Users(UserName,EmailId,Age,PhoneNumber,Password,Role) values('admin','admin@gmail.com',21,'8765432314','admin1234','Admin')
+Insert into Users(UserName,EmailId,Age,PhoneNumber,Password) values('Akshita','akshita@gmail.com',21,'7976456852','akshita123')
+
+CREATE TABLE Appointment(
+    AppointmentID INT IDENTITY(100,1) CONSTRAINT pk_Appointment_AppointmentId PRIMARY KEY,
+	EmailId varchar(255) not null,
+    SpecializationName VARCHAR(50) NOT NULL,
+    DoctorName varchar(25) NOT NULL,
+    AppointmentDate date NOT NULL,
+    PatientName varchar(25) NOT NULL,
+	[Description] varchar(255) Not Null
+);
+
+
+update Surgery set SurgeryDate = '2023-09-26'
+select * from Surgery
+sp_help Surgery
+insert Surgery values(1002,'2023-09-27',6,15,'GYN')

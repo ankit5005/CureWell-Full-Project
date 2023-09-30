@@ -1,0 +1,138 @@
+<nav class="navbar navbar-expand-lg">
+
+  <div class="container-fluid">
+
+    <a class="navbar-brand abc" href="#">
+
+      <i id="icon1" class="fa-solid fa-hospital"></i>
+
+      CureWell
+
+    </a>
+
+ 
+
+    <button
+
+      class="navbar-toggler"
+
+      type="button"
+
+      data-bs-toggle="collapse"
+
+      data-bs-target="#navbarScroll"
+
+      aria-controls="navbarScroll"
+
+      aria-expanded="false"
+
+      aria-label="Toggle navigation"
+
+    >
+
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+ 
+
+    <div class="collapse navbar-collapse" id="navbarScroll">
+
+      <ul
+
+        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+
+        style="--bs-scroll-height: 100px"
+
+      >
+
+        <li class="nav-item">
+
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+
+        </li>
+
+ 
+
+        <li class="nav-item">
+
+          <a class="nav-link" href="/doctor/view-doctor">View Doctors</a>
+
+        </li>
+
+ 
+
+        <li class="nav-item">
+
+          <a
+
+            class="nav-link"
+
+            href="/specialization/view-specialization"
+
+            tabindex="-1"
+
+            aria-disabled="true"
+
+            >View Specialization</a
+
+          >
+
+        </li>
+
+ 
+
+        <li class="nav-item">
+
+          <a
+
+            class="nav-link"
+
+            href="surgery/view-todays-surgery"
+
+            tabindex="-1"
+
+            aria-disabled="true"
+
+            >View Today's Surgery</a
+
+          >
+
+        </li>
+
+ 
+
+        <li class="nav-item" *ngIf="role=='Admin'">
+          <a
+            class="nav-link"
+            href="/doctor/add-doctor"
+            tabindex="-1"
+            aria-disabled="true"
+            >Add Doctor</a
+          >
+        </li>
+      </ul>
+<form class="d-flex">
+        <a *ngIf="!loggedIn"
+          [routerLink]="['/login']"
+          class="btn1 btn-main btn-round-full"
+          type="submit"
+          style="color: aliceblue; background-color: #e12454"
+          >Login</a
+        >
+        <a *ngIf="loggedIn"
+          (click)="logout()"
+          class="btn1 btn-main btn-round-full"
+          type="submit"
+          style="color: aliceblue; background-color: #e12454"
+          >LogOut</a
+        >
+      </form>
+
+    </div>
+
+  </div>
+
+</nav>
+
+ 

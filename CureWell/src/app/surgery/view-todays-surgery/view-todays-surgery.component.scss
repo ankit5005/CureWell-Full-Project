@@ -1,0 +1,781 @@
+/* view-surgery.component.scss */
+.section {
+
+ 
+
+  padding: 100px 0;
+
+ 
+
+}
+
+ 
+
+.bg-1 {
+
+ 
+
+
+ 
+
+  background-size: cover;
+
+ 
+
+  position: relative;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.page-title {
+
+ 
+
+  padding: 120px 0px 70px 0px;
+
+ 
+
+  position: relative;
+
+ 
+
+}
+
+ 
+
+.overlay:before {
+
+ 
+
+  content: "";
+
+ 
+
+  position: absolute;
+
+ 
+
+  left: 0;
+
+ 
+
+  top: 0;
+
+ 
+
+  bottom: 0;
+
+ 
+
+  right: 0;
+
+ 
+
+  width: 100%;
+
+ 
+
+  height: 100%;
+
+ 
+
+  opacity: 0.9;
+
+ 
+
+  background:  linear-gradient(45deg,
+  #223a66,
+  rgba(8,83,156, 0.75)), url("../../../assets/images/title-image.jpg") no-repeat 50% 50% !important;
+
+
+ 
+
+}
+
+ 
+
+.text-white {
+
+ 
+
+  color: #fff !important;
+
+ 
+
+}
+
+ 
+
+.page-title .block h1 {
+
+ 
+
+  color: #fff !important;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.text-lg {
+
+ 
+
+  font-size: 50px;
+
+ 
+
+}
+
+ 
+
+.text-color{
+
+ 
+
+color: #223a66 !important;
+
+ 
+
+font-size: 44px !important;
+
+ 
+
+}
+
+ 
+
+.section-title {
+
+ 
+
+  margin-bottom: 70px;
+
+ 
+
+}
+
+ 
+
+.section-title h2 {
+
+ 
+
+  color: #223a66;
+
+ 
+
+}
+
+ 
+
+.divider {
+
+ 
+
+  width: 40px;
+
+ 
+
+  height: 5px;
+
+ 
+
+  background: #e12454;
+
+ 
+
+}
+
+ 
+
+.main-image{
+
+ 
+
+  transition: transform 0.5s ease-in-out;
+
+ 
+
+}
+
+ 
+
+.main-image:hover {
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+  transform: scale(1.1, 1.1);
+
+ 
+
+ 
+
+ 
+
+      /* Example transition with a 0.5s duration */
+
+ 
+
+  /* Scale horizontally by 1.2 and vertically by 0.8 */
+
+ 
+
+}
+
+ 
+
+.content h4:hover{
+
+ 
+
+  font-size: 40px;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.content h4 {
+
+ 
+
+  transition: font-size 0.5s ease-in-out;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.btn-grad {
+
+ 
+
+  background-image: linear-gradient(to left, #d42b11 0%, #223a66 100%, #7aa14b 100%);
+
+ 
+
+  margin: 10px;
+
+ 
+
+  padding: 15px 45px;
+
+ 
+
+  text-align: center;
+
+ 
+
+  text-transform: uppercase;
+
+ 
+
+  transition: 0.5s;
+
+ 
+
+  background-size: 200% auto;
+
+ 
+
+  color: white;
+
+ 
+
+  box-shadow: 0 0 20px #eee;
+
+ 
+
+  border-radius: 10px;
+
+ 
+
+  display: block;
+
+ 
+
+  text-decoration: none;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.btn-grad:hover {
+
+ 
+
+  background-position: center;
+
+ 
+
+  /* change the direction of the change here */
+
+ 
+
+  color: #fff;
+
+ 
+
+  text-decoration: none;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.btn1 {
+
+ 
+
+  display: inline-block;
+
+ 
+
+  font-size: 14px !important;
+
+ 
+
+  font-size: 0.8125rem;
+
+ 
+
+  font-weight: 700;
+
+ 
+
+  letter-spacing: .5px;
+
+ 
+
+  padding: 0.75rem 2rem;
+
+ 
+
+  font-family: "Exo", sans-serif;
+
+ 
+
+  text-transform: uppercase;
+
+ 
+
+  border-radius: 5px;
+
+ 
+
+  border: 2px solid transparent;
+
+ 
+
+  transition: all .35s ease;
+
+ 
+
+  text-decoration: none;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.btn1:hover {
+
+ 
+
+  background: #e12454;
+
+ 
+
+  border-color: transparent;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.btn-round-full {
+
+ 
+
+  border-radius: 50px;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.btn-main {
+
+ 
+
+  background: #223a66;
+
+ 
+
+  color: #fff;
+
+ 
+
+  border-color: #223a66;
+
+ 
+
+}
+
+.main{
+
+  background-image: url(../../../assets/images/view-surgery-background.jpg);
+
+  background-size:fill;
+
+  background-repeat: no-repeat;
+
+}
+
+/* Style for the heading */
+
+h1.text-color {
+
+  font-size: 24px; /* Adjust the font size as needed */
+
+  color: #333; /* Change the text color as needed */
+
+  padding: 20px; /* Adjust the padding as needed */
+
+  margin-bottom: 10px; /* Adjust the margin as needed */
+
+  text-align: center;
+
+  background-color: #f7f7f7; /* Background color for the heading */
+
+  border: 1px solid #ccc; /* Border for the heading */
+
+  border-radius: 5px; /* Border radius for rounded corners */
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a box shadow */
+
+}
+
+ 
+
+ 
+
+.surgery-category-band {
+
+  background-color: #3498db;
+
+  color: white;
+
+  font-weight: bold;
+
+  padding: 5px 10px;
+
+  border-top-left-radius: 5px;
+
+  border-top-right-radius: 5px;
+
+}
+
+ 
+
+.surgery-list {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+
+}
+
+ 
+
+.surgery-item {
+
+  background-color: #f7f7f7;
+
+  border: 1px solid #ccc;
+
+  border-radius: 5px;
+
+  padding: 15px;
+
+  margin: 10px;
+
+  width: calc(33.33% - 20px); /* Adjust the width as needed */
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+  transition: transform 0.2s ease-in-out;
+
+  opacity: 0.95;
+
+}
+
+ 
+
+.surgery-item:hover {
+
+  transform: scale(1.05); /* Increase size on hover */
+
+}
+
+ 
+
+.surgery-details {
+
+  font-size: 16px;
+
+}
+
+ 
+
+.surgery-id {
+
+  color: #333;
+
+}
+
+ 
+
+.surgery-date {
+
+  margin-top: 5px;
+
+}
+
+ 
+
+.surgery-time {
+
+  font-style: italic;
+
+  margin-top: 5px;
+
+}
+
+ 
+
+.surgery-doctor {
+
+  margin-top: 10px;
+
+}
+
+ 
+
+.surgery-actions {
+
+  text-align: center;
+
+  margin-top: 10px;
+
+}
+
+ 
+
+ 
+
+ 
+
+.btn-color {
+
+  background-color: #223a66;
+
+  color: white;
+
+  padding: 10px 15px;
+
+  border-radius: 30px;
+
+  cursor: pointer;
+
+}
+
+ 
+
+.btn-color:hover {
+
+  background: linear-gradient(to right, #df2b58, #da4c6f, #df7a93);
+
+}
+
+ 
+
+/* Style for label and info on the same line */
+
+.label-info {
+
+  display: inline-block;
+
+  margin-right: 10px; /* Adjust as needed for spacing */
+
+}
+
+ 
+
+.label {
+
+  font-weight: bold;
+
+  margin-right: 5px; /* Adjust as needed for spacing */
+
+}
+
+ 
+
+.info {
+
+  display: inline;
+
+}
+
+ 
+
+/* Style for the dropdown container */
+
+.form-group.dropdown {
+
+  position: relative;
+
+  display: inline-block;
+
+}
+
+ 
+
+/* Style for the select element */
+
+.form-group.dropdown select {
+
+  width: 200px; /* Adjust the width as needed */
+
+  padding: 10px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 5px;
+
+  background-color: #fff;
+
+  font-size: 16px;
+
+  appearance: none; /* Remove default arrow */
+
+  outline: none; /* Remove focus outline */
+
+  cursor: pointer;
+
+}
+
+ 
+
+/* Style for select options */
+
+.form-group.dropdown select option {
+
+  padding: 5px;
+
+  font-size: 14px;
+
+  background-color: #ddd7d9;
+
+  color: #333;
+
+}
+
+ 
+
+/* Style for the selected option */
+
+.form-group.dropdown select option:checked {
+
+  background-color: #223a66;
+
+  color: white;
+
+  font-weight: bold;
+
+}
+
+ 
+
+/* Add a border on focus */
+
+.form-group.dropdown select:focus {
+
+  border-color: #3498db;
+
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+
+}
+
+@media(max-width:800px)
+{
+  .surgery-list{
+    flex-direction: column;
+  }
+  .surgery-item{
+    flex: 1;
+    min-width: 300px;
+    width: 100%;
+  }
+
+}

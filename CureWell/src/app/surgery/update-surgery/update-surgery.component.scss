@@ -1,0 +1,245 @@
+$errorcolor : red;
+.error{
+    border : 1px solid $errorcolor;
+}
+
+$errorcolor : red;
+.error{
+    border : 1px solid $errorcolor;
+}
+
+.main{
+    background:linear-gradient(to right,pink,white);
+    padding: 15px;
+}
+/* Style for labels */
+label {
+    display: block; /* Labels are displayed as block elements */
+    font-weight: bold; /* Bold font-weight for labels */
+    margin-bottom: 6px; /* Adds spacing below each label */
+    color: #333; /* Text color for labels */
+    font-size: 16px; /* Font size for labels */
+  }
+  .card-header1 {
+    background-color: #ffffff; /* Background color */
+    color: #fff; /* Text color */
+    font-size: 24px; /* Font size */
+    text-align: center; /* Center-align the text */
+    padding: 20px; /* Add some padding for spacing */
+    border-bottom: 2px solid #dddddd; /* Bottom border */
+  }
+
+// .container {
+//     margin-top: 20px ;
+//   }
+  
+  .card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .card-body {
+    padding: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    background-color: #f4f9fc;
+    height: 55px;
+    border-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+  
+  /* Style for the button when it is disabled */
+    button:disabled {
+    background-color: #ccc; /* Change to a gray color */
+    border-color: #ccc;
+    color: #666; /* Change text color to a darker gray */
+    cursor: not-allowed; /* Change cursor to not-allowed */
+  }
+  
+  /* Additional styles for specific elements if needed */
+  
+  /* Apply the page title styles */
+  .page-title {
+    padding: 120px 0px 70px 0px;
+    position: relative;
+  }
+  
+  .page-title .block h1 {
+    color: #fff !important;
+  }
+  
+  .text-lg {
+    font-size: 50px;
+  }
+  
+  .text-color {
+    color: white !important;
+    font-size: 44px !important;
+  }
+  
+  /* Apply the background overlay to .bg-1 */
+  .bg-1:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    background: #223a66;
+  }
+  
+  /* Apply styles to .btn1 */
+  .btn1 {
+    display: inline-block;
+    font-size: 14px !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 0.75rem 2rem;
+    font-family: "Exo", sans-serif;
+    text-transform: uppercase;
+    border-radius: 3px;
+    border:none;
+    text-decoration: none;
+  }
+  
+  .btn1:hover {
+    background: linear-gradient(to right, #df2b58, #da4c6f, #df7a93);
+    
+  }
+
+  .btn-secondary1{
+    
+    color: #223a66;
+    font-weight: 700;
+    font-family: "Exo", sans-serif;
+    text-transform: uppercase;
+    padding: 0.5rem 1.4rem;
+  }
+
+  .btn-secondary1:hover {
+    border: 1px solid #223a66;
+  }
+  
+  .btn-round-full {
+    border-radius: 50px;
+  }
+  
+  .btn-main {
+    background: #e12454;
+    color: #fff;
+    border-color: #e12454;
+  }
+  
+  .doctor-update-surgery{
+    display: flex;
+    // background-color: #da4c6f;
+    justify-content: center;
+    margin-top: 58px;
+  }
+  img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  .detailsdiv div{
+    flex: 1;
+  }
+  .usdiv2{
+    padding: 30px;
+    background-color: #384D75;
+  }
+  .usdiv2 label{
+    color: white;
+    font-size: 20px;
+
+  }
+  .usdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .btn-secondary1{
+    color: white;
+  }
+  
+@media(max-width:1500px)
+{
+  // .detailsdiv{
+  //   flex-direction: column;
+  // }
+  .main{
+    margin-top: 0px !important;
+    padding: 0px !important;
+    offset:0 !important;
+    justify-content: space-between !important;
+   
+  }
+  .detailsdiv div{ 
+   flex:1
+  }
+  .usdiv2{
+    padding: 10px !important;
+  }
+  .detailsdiv label{
+    font-size: 20px;
+  }
+  .usdiv{
+    flex: 8;
+    padding: 0px;
+    justify-content: flex-start;
+  }
+  .doctor-update-surgery{
+    flex: 3;
+    margin-top: 0px !important;
+    justify-content: flex-start;
+  }
+
+  .doctor-update-surgery img{
+    margin-top: 0px !important;
+    width: 100%;
+    height: 100%;
+
+  }
+  .text-color{
+    font-size:30px !important;
+  }
+}
+@media(max-width:800px){
+  .main{
+    display: flex;
+    flex-direction: column !important;
+  }
+  .usdiv{
+    flex: 1 !important;
+  }
+  .doctor-update-surgery{
+    flex: 1 !important;
+  }
+  .detailsdiv{
+    flex-direction: column;
+  }
+  .detailsdiv div{
+    margin: 0px !important;
+  }
+}

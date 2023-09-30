@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOTI.CureWell.DAL", "SOTI.CureWell.DAL\SOTI.CureWell.DAL.csproj", "{E67C6C70-51F8-4924-95BF-FB6A1FB20E07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOTI.CureWell.WebAPI", "SOTI.CureWell.WebAPI\SOTI.CureWell.WebAPI.csproj", "{F1BBD280-0CD6-4355-BF82-580E70201AA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E67C6C70-51F8-4924-95BF-FB6A1FB20E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E67C6C70-51F8-4924-95BF-FB6A1FB20E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E67C6C70-51F8-4924-95BF-FB6A1FB20E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E67C6C70-51F8-4924-95BF-FB6A1FB20E07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1BBD280-0CD6-4355-BF82-580E70201AA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1BBD280-0CD6-4355-BF82-580E70201AA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1BBD280-0CD6-4355-BF82-580E70201AA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1BBD280-0CD6-4355-BF82-580E70201AA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7F410AD-923E-4742-B3F2-1AE0A0788DA1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,78 @@
+<!--Page title section-->
+<section class="page-title bg-1">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="position: relative">
+                <div class="block text-center">
+                    <h1 class="text-capitalize mb-5 text-lg">Specialized Doctors</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section team">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="section-title text-center">
+            <h2 class="mb-4">Meet Our Specialists</h2>
+            <div class="divider mx-auto my-4"></div>
+             <p>We have the best doctors from across the world, specialized in their respective fields.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-4">
+            <select name="" id="" class="form-control" [(ngModel)]="selectedSpec" (ngModelChange)="onChange($event)" name="specform">
+                <option [value]="s.specializationCode"
+                 *ngFor="let s of specializations; let i = index;" [attr.disabled]="i == specializations.length-1 ? true : null"
+                 [attr.selected]="i == specializations.length-1 ? true : null">{{s.specializationName}}</option>
+            </select>
+        </div>
+    </div>
+    </div>
+  </section>
+
+<section class="section service-2"style="padding: 5px 0;">
+
+    <div class="container">
+
+        <div class="row d-flex">
+
+            <div class="col-lg-3 col-md-6" *ngFor="let d of doctorList">
+
+              <div class="department-block mb-5">
+
+                <!-- <img src="assets/images/service-1.jpg" alt="" class="img-fluid main-image w-100" /> -->
+
+                <img src="../../../assets/images/{{selectedSpec.toLowerCase()}}.jpg" alt="" class="img-fluid main-image w-100">
+
+                <div class="content">
+
+                  <h4 class="mt-4 mb-2 title-color">
+
+                    {{d.doctorName | titlecase}}
+
+                  </h4>
+
+                  <p class="mb-4">
+
+                    {{selectedSpec}}
+
+                  </p>
+
+                </div>
+
+                <a class="btn1 btn-main btn-round-full" *ngIf="role=='Admin'" (click)="editDoctorDetails(d.doctorId)">Edit Doctor <i class="fa-solid fa-angle-right fa-beat"></i></a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+    </div>
+
+</section>

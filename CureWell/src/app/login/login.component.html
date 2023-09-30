@@ -1,0 +1,41 @@
+<!-- <section> -->
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 offset-lg-1 logdiv">
+        <!-- <div> -->
+            <div class="LoginF mt-3">
+                <i class="fa-solid fa-user userprofile"></i>
+                <h2 class="text-center loginh2">Login</h2>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="loginformdiv">
+                    <div>
+                        <label for="id">Email/Id:</label>
+                        <input type="text" id="id" class="form-control" formControlName="emailId">
+                        <span *ngIf="f['emailId'] && f['emailId'].invalid && f['emailId'].touched" style="color: rgb(255, 44, 41);">
+                            *Email is Required*
+                        </span>
+                    </div>
+                    <br>
+                    <div class="">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" class="form-control" formControlName="password">
+                    </div>
+
+                    <span *ngIf="f['password'] && f['password'].invalid && f['password'].touched" style="color: rgb(255, 44, 41);">
+                        *Password is required *
+                    </span>
+                    <div>
+                        <br>
+                        <button type="submit" class="btn loginbtn">Submit</button>
+                    </div>
+                    <div>
+                        <br>
+                        <a routerLink="/signup" class="signuplink">Sign Up Account</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <!-- </div> -->
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <img src="../../assets/images/successful-medical-team.jpg" alt="" class="login-img">
+    </div>
+</div>
+<!-- </section> -->

@@ -1,0 +1,157 @@
+<div class="row mt-3 mb-2 main">
+  <!-- Left column for the form -->
+  <div class="col-md-8 col-lg-6 col-sm-12 col-xs-12 offset-lg-1 offset-md-0 offset-sm-0 offset-xs-0 usdiv">
+    <div class="card usdiv2">
+    
+      <h2 class="mb-2 text-color text-center">Update Surgery</h2>
+
+      <div class="card-body" *ngIf="updateForm">
+        <form action="" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+          <div class="d-flex detailsdiv">
+          <div class="mb-3">
+            <label class="col-form-label">Surgery Id</label>
+
+            <input
+              type="number"
+              class="form-control"
+              formControlName="surgeryId"
+              readonly
+            />
+          </div>
+
+          <div class="mb-3 mx-3">
+            <label class="col-form-label">Doctor Id</label>
+
+            <input
+              type="text"
+              class="form-control"
+              formControlName="doctorId"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="d-flex detailsdiv">
+          <div class="mb-3">
+            <label class="col-form-label">Surgery Date</label>
+
+            <input
+              type="date"
+              class="form-control"
+              formControlName="surgeryDate"
+              readonly
+            />
+          </div>
+
+          <div class="mb-3 mx-3">
+            <label class="col-form-label">Start Time(24 hours Format)</label>
+
+            <input
+              type="number"
+              class="form-control"
+              formControlName="startTime"
+              [ngClass]="{
+                error:
+                  (submitted ||
+                    f['startTime'].touched ||
+                    f['startTime'].dirty) &&
+                  f['startTime'].errors
+              }"
+            />
+            <div
+            *ngIf="submitted || f['startTime'].touched || f['startTime'].dirty"
+            class="text-danger small"
+          >
+            <span *ngIf="f['startTime'].errors?.['min']"
+              >Value Cannot be less than 0</span
+            >
+            <span *ngIf="f['startTime'].errors?.['max']"
+              >Value Cannot be more than 24</span
+            >
+            <span *ngIf="f['startTime'].errors?.['required']"
+              >Start Time is required</span
+            >
+          </div>
+          <div class="text-danger small">
+            <span *ngIf="f['endTime'].value <= f['startTime'].value"
+              >Start Time should be less than End Time</span
+            >
+          </div>
+          </div>
+        </div>
+         
+         
+
+          <div class="d-flex detailsdiv">
+          <div class="mb-3">
+            <label class="col-form-label">End Time(24 Hours Format)</label>
+
+            <input
+              type="number"
+              class="form-control"
+              formControlName="endTime"
+              [ngClass]="{
+                error:
+                  (submitted || f['endTime'].touched || f['endTime'].dirty) &&
+                  f['endTime'].errors
+              }"
+            />
+            <div
+            *ngIf="
+              (submitted || f['endTime'].touched || f['endTime'].dirty) &&
+              f['endTime'].errors
+            "
+            class="text-danger small"
+          >
+            <span *ngIf="f['endTime'].errors?.['min']"
+              >Value Cannot be less than 0.</span
+            >
+            <span *ngIf="f['endTime'].errors?.['max']"
+              >Value Cannot be more than 24.</span
+            >
+            <span *ngIf="f['endTime'].errors?.['required']"
+              >End Time is required.</span
+            >
+          </div>
+          <div class="text-danger small">
+            <span *ngIf="f['endTime'].value <= f['startTime'].value"
+              >End Time should be greater than End Time</span
+            >
+          </div>
+          </div>
+
+          
+
+          <div class="mb-3 mx-3">
+            <label class="col-form-label">Surgery Category</label>
+
+            <input
+              type="text"
+              class="form-control"
+              formControlName="surgeryCategory"
+              readonly
+            />
+          </div>
+        </div>
+
+          <div class="mt-2">
+            <button class="btn1 btn-main btn-round-full" type="submit" [disabled]="isButtonDisabled">Update</button>
+
+            <button
+              class="btn btn-secondary1 btn-round-full m-2"
+              type="reset"
+              (click)="backToViewSurgery()"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+   <!-- Right column for the image -->
+   <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12 doctor-update-surgery">
+    <img src="../../../assets/images/update-surgery-right(2).png" alt="Doctor Updating Surgery" height="800px">
+  </div>
+</div>
+
+ 

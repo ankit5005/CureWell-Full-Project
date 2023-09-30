@@ -1,0 +1,221 @@
+<section class="appointment section">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-6">
+
+        <img src="../../assets/images/medical-5459654_1280.png" width="80%" alt="Medical Image">
+
+      </div>
+
+
+
+      <div class="col-lg-6">
+
+        <div class="appointment-wrap mt-5 mt-lg-0 pl-lg-5" *ngIf="registrationForm">
+
+          <h2 class="mb-2 text-color">Sign Up</h2>
+
+          <hr>
+
+
+
+          <form action="" [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="appointment-form">
+
+            <div class="row">
+
+              <div class="col-lg-6">
+
+                <div class="form-group mb-3">
+
+                  <input formControlName="userName" type="text" class="form-control" placeholder="User Name" [ngClass]="{
+
+                            error:
+
+                              (submitted ||
+
+                                f['userName'].touched ||
+
+                                f['userName'].dirty) &&
+
+                              f['userName'].errors
+
+                          }" />
+
+                </div>
+
+                <div *ngIf="(submitted || f['userName'].touched) && f['userName'].errors" class="text-danger small">
+                  <span *ngIf="f['userName'].errors?.['required']">User Name is required</span>
+                  <span *ngIf="f['userName'].errors?.['minlength']">User Name should atleast be of 3
+                    characters</span>
+                </div>
+
+              </div>
+
+
+
+              <div class="col-lg-6">
+
+                <div class="form-group mb-3">
+
+                  <input class="form-control" formControlName="email" type="email" placeholder="Email" [ngClass]="{
+
+                            error:
+
+                              (submitted ||
+
+                                f['email'].touched ||
+
+                                f['email'].dirty) &&
+
+                              f['email'].errors
+
+                          }" />
+
+                </div>
+
+                <div *ngIf="(submitted || f['email'].touched) && f['email'].errors" class="text-danger small">
+                  <span *ngIf="f['email'].errors?.['required']">Email is required</span>
+                  <span *ngIf="f['email'].errors?.['pattern']">. Please enter valid email</span>
+                </div>
+              </div>
+
+
+
+              <div class="col-lg-6">
+
+                <div class="form-group mb-3">
+
+                  <input class="form-control" type="number" formControlName="age" placeholder="Age" [ngClass]="{
+
+                        error:
+
+                          (submitted ||
+
+                            f['age'].touched ||
+
+                            f['age'].dirty) &&
+
+                          f['age'].errors
+
+                      }" />
+
+                </div>
+
+                <div *ngIf="submitted || f['age'].touched || f['age'].dirty" class="text-danger small">
+
+                  <span *ngIf="f['age'].errors?.['required']">Age is Required</span>
+
+                </div>
+
+              </div>
+
+
+
+              <div class="col-lg-6">
+
+                <div class="form-group mb-3">
+
+                  <input formControlName="phoneNo" type="number" class="form-control" placeholder="PhoneNo" [ngClass]="{
+
+                        error:
+
+                          (submitted ||
+
+                            f['phoneNo'].touched ||
+
+                            f['phoneNo'].dirty) &&
+
+                          f['phoneNo'].errors
+
+                      }" />
+
+                </div>
+
+                <div *ngIf="(submitted || f['phoneNo'].touched) && f['phoneNo'].errors" class="text-danger small">
+                  <span *ngIf="f['phoneNo'].errors?.['required']">Contact No is required</span>
+                  <span *ngIf="f['phoneNo'].errors?.['minlength'] || f['phoneNo'].errors?.['maxlength']">Contact
+                    No must be of 10 digit</span>
+                  <span *ngIf="f['phoneNo'].errors?.['pattern']">. Please enter valid contact no</span>
+                </div>
+
+              </div>
+
+
+
+              <div class="col-lg-6">
+
+                <div class="form-group mb-3">
+
+                  <textarea formControlName="address" type="text" class="form-control" placeholder="Address" [ngClass]="{
+
+                        error:
+
+                          (submitted ||
+
+                            f['address'].touched ||
+
+                            f['address'].dirty) &&
+
+                          f['address'].errors
+
+                      }"></textarea>
+
+                </div>
+
+                <div *ngIf="submitted || f['address'].touched || f['address'].dirty" class="text-danger small">
+
+                  <span *ngIf="f['address'].errors?.['required']">Address is Required</span>
+
+                </div>
+
+              </div>
+
+
+
+              <div class="col-lg-6">
+
+                <div class="form-group mb-3">
+
+                  <input formControlName="password" type="password" class="form-control" placeholder="Password" />
+
+                </div>
+
+                <div *ngIf="(submitted || f['password'].touched) && f['password'].errors" class="text-danger small">
+                  <span *ngIf="f['password'].errors?.['required']">Password is required<br></span>
+                  <span *ngIf="f['password'].errors?.['minlength']">Password should be min 8 characters long<br></span>
+                  <span *ngIf="f['password'].errors?.['maxlength']">Password should be max 25 characters long<br></span>
+                  <span *ngIf="f['password'].errors?.['pattern']">Password should contain  atleast 1 capital letter,
+                    atleast 1 number and atleast 1 special symbol<br></span>
+                </div>
+
+              </div>
+
+            </div>
+            <button class="btn1 btn-main btn-round-full" type="submit"
+            [disabled]="isButtonDisabled">Sign Up <i
+                class="fa-solid fa-angle-right fa-beat"></i></button>
+          </form>
+
+        </div>
+
+
+
+       
+
+        <!-- <a type="submit" class="btn1 btn-main btn-round-full mt-2" href="confirmation.html"
+
+                >Sign Up <i class="fa-solid fa-angle-right fa-beat"></i
+
+              ></a> -->
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
