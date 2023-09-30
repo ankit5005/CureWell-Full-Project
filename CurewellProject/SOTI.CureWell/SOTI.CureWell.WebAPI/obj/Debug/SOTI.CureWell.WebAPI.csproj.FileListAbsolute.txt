@@ -68,3 +68,6 @@ C:\Users\ankitsharma\OneDrive - SOTI Inc\Desktop\CureWellBackend\CureWellProject
 C:\Users\ankitsharma\OneDrive - SOTI Inc\Desktop\CureWellBackend\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.WebAPI\obj\Debug\SOTI.CureWell.WebAPI.dll
 C:\Users\ankitsharma\OneDrive - SOTI Inc\Desktop\CureWellBackend\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.WebAPI\obj\Debug\SOTI.CureWell.WebAPI.pdb
 C:\Users\ankitsharma\OneDrive - SOTI Inc\Desktop\CureWellBackend\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\SOTI.CureWell.DAL.dll.config
+C:\Users\ankitsharma\OneDrive - SOTI Inc\Desktop\CureWellBackend\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\System.Web.Cors.dll
+C:\Users\ankitsharma\OneDrive - SOTI Inc\Desktop\CureWellBackend\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\System.Web.Http.Cors.dll
+C:\Users\ankitsharma\OneDrive - SOTI Inc\Desktop\CureWellBackend\CureWellProject\CurewellProject\SOTI.CureWell\SOTI.CureWell.WebAPI\bin\System.Web.Http.Cors.xml

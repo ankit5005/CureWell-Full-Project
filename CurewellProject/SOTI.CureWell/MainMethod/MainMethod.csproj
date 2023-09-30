@@ -33,8 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>MainMethod.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SOTI.CureWell.DAL">
